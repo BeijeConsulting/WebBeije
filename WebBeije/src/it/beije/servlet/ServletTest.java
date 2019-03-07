@@ -32,20 +32,23 @@ public class ServletTest extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		StringBuilder builder = new StringBuilder();
-		Enumeration<String> paramNames = request.getParameterNames();
-		String name;
-		while (paramNames.hasMoreElements()) {
-			name = paramNames.nextElement();
-			builder.append(name).append(" : ")
-			.append(request.getParameterMap().get(name)[0])
-			.append("<br>");
-		}
-		
+//		StringBuilder builder = new StringBuilder();
+//		Enumeration<String> paramNames = request.getParameterNames();
+//		String name;
+//		while (paramNames.hasMoreElements()) {
+//			name = paramNames.nextElement();
+//			builder.append(name).append(" : ")
+//			.append(request.getParameterMap().get(name)[0])
+//			.append("<br>");
+//		}
+//		
+//		response.setContentType("text/html");
+//		response.getWriter().append("Served at: ").append(request.getContextPath())
+//		.append("    <br><br>    ").append(request.getRemoteAddr()).append("    <br><br>    ")
+//		.append("ELENCO PARAMETRI<br><br>").append(builder.toString());
+
 		response.setContentType("text/html");
-		response.getWriter().append("Served at: ").append(request.getContextPath())
-		.append("    <br><br>    ").append(request.getRemoteAddr()).append("    <br><br>    ")
-		.append("ELENCO PARAMETRI<br><br>").append(builder.toString());
+		response.getWriter().append("ciao GET");
 
 //		try {
 //			response.setContentType("text/html");
@@ -63,8 +66,8 @@ public class ServletTest extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		User user = new User();
-		user.setFirstName(request.getParameter("first_name"));
-		user.setLastName(request.getParameter("last_name"));
+		user.setFirstName(request.getParameter("firstName"));
+		user.setLastName(request.getParameter("lastName"));
 		request.getSession().putValue("utente", user);
 
 		response.sendRedirect("user.jsp");

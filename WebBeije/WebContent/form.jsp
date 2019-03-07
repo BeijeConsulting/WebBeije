@@ -8,12 +8,17 @@
 </head>
 <body>
 
-<form action = "servlet" method = "POST">
+<form action = "process.jsp" method = "get">
   First Name: <input type = "text" name = "first_name">
   <br />
-  Last Name: <input type = "text" name = "last_name" />
+  Last Name: <input type = "text" name = "lastName" />
   <input type = "submit" value = "Submit" />
 </form>
 
+<%-- jsp:useBean id="utente" class="it.beije.servlet.User" scope="session"></jsp:useBean>  
+
+FirstName : <%= utente.getFirstName() %><br>
+LastName  : <%= utente.getLastName() %>
+--%>
 </body>
 </html>

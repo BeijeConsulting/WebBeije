@@ -8,14 +8,18 @@
 <title>Pagina dati utente</title>
 </head>
 <body>
-<%
+<%--
 User user = (User)session.getValue("utente");
 
-if (user != null) { %>
-FirstName : <%= user.getFirstName() %><br>
-LastName  : <%= user.getLastName() %>
-<% }
+if (user != null) { --%>
+
+<jsp:useBean id="utente" class="it.beije.servlet.User" scope="session"></jsp:useBean>  
+
+FirstName : <%= utente.getFirstName() %><br>
+LastName  : <%= utente.getLastName() %>
+
+<%-- }
 else { out.print("NESSUN UTENTE IN SESSIONE"); }
-%>
+--%>
 </body>
 </html>
