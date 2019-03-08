@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<domande>
+	<domanda id="1" chapter="1">
+		<testo>
+Which of the following can replace line 2 to make this code compile? (Choose all that apply)
+
+	1: import java.util.*;
+	2: // INSERT CODE HERE
+	3: public class Imports {
+	4:   public void method(ArrayList&lt;String&gt; list) {
+	5:     sort(list);
+	6:   }
+	7: }
+	
+A. import static java.util.Collections;
+B. import static java.util.Collections.*;
+C. import static java.util.Collections.sort(ArrayList&lt;String&gt;);
+D. static import java.util.Collections;
+E. static import java.util.Collections.*;
+F. static import java.util.Collections.sort(ArrayList&lt;String&gt;);
+		</testo>
+		<risposta>B</risposta>
+	</domanda>
+	<domanda id="2" chapter="1">
+		<testo>
+		Which of the following can replace line 2 to make this code compile? (Choose all that apply)\n\n
+		\t1: import java.util.*;\n
+		\t2: // INSERT CODE HERE\n
+		\t3: public class Imports {\n
+		\t4:   public void method(ArrayList&lt;String&gt; list) {\n
+		\t5:     sort(list);\n
+		\t6:   }\n
+		\t7: }\n\n
+		A. import static java.util.Collections;\n
+		B. import static java.util.Collections.*;\n
+		C. import static java.util.Collections.sort(ArrayList&lt;String&gt;);\n
+		D. static import java.util.Collections;\n
+		E. static import java.util.Collections.*;\n
+		F. static import java.util.Collections.sort(ArrayList&lt;String&gt;);\n
+		</testo>
+		<risposta>BE</risposta>
+	</domanda>
+</domande>

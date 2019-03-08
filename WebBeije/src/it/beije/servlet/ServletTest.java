@@ -47,16 +47,16 @@ public class ServletTest extends HttpServlet {
 //		.append("    <br><br>    ").append(request.getRemoteAddr()).append("    <br><br>    ")
 //		.append("ELENCO PARAMETRI<br><br>").append(builder.toString());
 
-		response.setContentType("text/html");
-		response.getWriter().append("ciao GET");
+//		response.setContentType("text/html");
+//		response.getWriter().append("ciao GET");
 
-//		try {
-//			response.setContentType("text/html");
-//			response.getWriter().append(new CSVutils().readFile().toString());
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			response.setStatus(404);
-//		}
+		try {
+			response.setContentType("text/plain");
+			response.getWriter().append(new CSVutils().readFile().toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+			response.setStatus(404);
+		}
 		
 	}
 

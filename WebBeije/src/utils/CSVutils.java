@@ -49,7 +49,7 @@ public class CSVutils {
 
 		//ciclo sull'array di stringhe
 		for (String row : strings) {
-			builder.append(row).append("<br>");
+			builder.append(row).append("\n");
 		}
 		
 		return builder.toString();

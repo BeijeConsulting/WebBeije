@@ -8,13 +8,21 @@
 </head>
 <body>
 
-<jsp:useBean id="utente" class="it.beije.servlet.User" scope="session"></jsp:useBean>  
+<jsp:useBean id="utente" class="it.beije.servlet.User" scope="session"></jsp:useBean>
+
 <jsp:setProperty property="firstName" name="utente" param="first_name" />  
 <jsp:setProperty property="lastName" name="utente"/>  
   
 Record:<br>  
 <jsp:getProperty property="firstName" name="utente"/><br>  
-<jsp:getProperty property="lastName" name="utente"/><br>  
+<jsp:getProperty property="lastName" name="utente"/><br> 
+
+<% String c = request.getParameter("check1") != null ? request.getParameter("check1") : "chissà..."; %>
+
+<script type="text/javascript">
+  var <%= c %> = "pippo";
+  alert(<%= c %>);
+</script>
 
 </body>
 </html>
