@@ -33,7 +33,7 @@ public class StartQuiz extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if (request.getRequestURI().equals(request.getContextPath()+"/StartQuiz")) {
-			List<Domanda> domande = Utils.readFileDomande("C:\\temp\\domande.xml");
+			List<Domanda> domande = Utils.readFileDomande("C:\\temp\\test.xml");
 			
 			request.getSession().putValue("elencoDomande", domande);
 			//request.getSession().putValue("indice", new Integer(0));
