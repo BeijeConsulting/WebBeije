@@ -66,9 +66,21 @@ public class ServletTest extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		User user = new User();
-		user.setFirstName(request.getParameter("firstName"));
-		user.setLastName(request.getParameter("lastName"));
+		user.setNome(request.getParameter("nome"));
+		user.setCognome(request.getParameter("cognome"));
+		user.setSesso(request.getParameter("sesso"));
+		user.setEmail(request.getParameter("email"));
+		user.setTelefono(request.getParameter("telefono"));
+		user.setIscrizione(request.getParameter("iscrizione"));;
 		request.getSession().putValue("utente", user);
+		
+		try {
+			if(! user.getIscrizione().equals(null))
+				System.out.println(CSVutils.saveOnDB(user.getNome(), user.getCognome(), user.getTelefono()));
+		}
+		catch (NullPointerException npe) {
+			System.out.println("false");
+		}
 
 		response.sendRedirect("user.jsp");
 	}

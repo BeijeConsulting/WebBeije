@@ -4,6 +4,9 @@ package utils;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,18 +44,39 @@ public class CSVutils {
 		return content;
 	}
 	
-	public String readFile() throws Exception {
-		StringBuilder builder = new StringBuilder();
+	public static boolean saveOnDB(String nome, String cognome, String telefono) {
+		StringBuilder insert = new StringBuilder();
+		boolean ret = false;
+		Connection conn = null;
+		Statement stmt = null;
 		
-		//leggo il file e carico ciascuna riga in un array di stringhe
-		List<String> strings = CSVutils.getFileAsStrings("C:\\temp\\rubrica.txt");
-
 		//ciclo sull'array di stringhe
-		for (String row : strings) {
-			builder.append(row).append("<br>");
+			
+			insert = new StringBuilder("INSERT INTO rubrica (nome, cognome, telefono) VALUES ('");
+			insert.append(nome).append("','");
+			insert.append(cognome).append("','");
+			insert.append(telefono).append("')");
+			System.out.println(insert.toString());
+			
+			//mi connetto al DB e lancio la query
+			try {
+				conn = DButils.getConnection();
+				stmt = conn.createStatement();
+				stmt.execute(insert.toString());
+				ret = true;
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					stmt.close();
+					conn.close();
+				} catch (SQLException sqlException) {
+					sqlException.printStackTrace();
+				}
 		}
 		
-		return builder.toString();
+		return ret;
 	}
+	
 
 }

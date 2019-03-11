@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Questo è un test</title>
+<title>Test Page</title>
 </head>
 <body>
 <p>OGGI : </p>
