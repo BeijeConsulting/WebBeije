@@ -45,7 +45,7 @@ public class CSVutils {
 		StringBuilder builder = new StringBuilder();
 		
 		//leggo il file e carico ciascuna riga in un array di stringhe
-		List<String> strings = CSVutils.getFileAsStrings("C:\\temp\\rubrica.txt");
+		List<String> strings = CSVutils.getFileAsStrings("C:\\temp\\rubrica.txt"); // TODO: Da cambiare path file
 
 		//ciclo sull'array di stringhe
 		for (String row : strings) {
