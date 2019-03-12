@@ -25,7 +25,7 @@ public class Dipendente {
 	private String cognome;
 	
 	@Column(name = "data_nascita")
-	private LocalDate dataNascita;
+	private String dataNascita;
 	
 	@Column(name = "luogo_nascita")
 	private String luogoNascita;
@@ -95,11 +95,11 @@ public class Dipendente {
 		this.cognome = cognome;
 	}
 
-	public LocalDate getDataNascita() {
+	public String getDataNascita() {
 		return dataNascita;
 	}
 
-	public void setDataNascita(LocalDate dataNascita) {
+	public void setDataNascita(String dataNascita) {
 		this.dataNascita = dataNascita;
 	}
 
