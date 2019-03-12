@@ -50,58 +50,58 @@ public class Test extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		Connection conn = null;
-		Statement stmt = null;
-		ResultSet rset= null;
-
-		try {
-			conn = DButils.getConnection();
-			
-//			String insert = "INSERT INTO tabella_prova VALUES (null, 'edi', 'paperetti', 'M', '20190221')";
+		
+//		Connection conn = null;
+//		Statement stmt = null;
+//		ResultSet rset= null;
 //
-//			String query = "SELECT * from tabella_prova";
+//		try {
+//			conn = DButils.getConnection();
 //
-//
-//			stmt = conn.createStatement();
-//
-//			stmt.execute(insert);
-//			rset = stmt.executeQuery(query);
-//
-//			while (rset.next()) {
-//				int id = rset.getInt("id");
-//				String nome = rset.getString("nome");
-//				String cognome = rset.getString("cognome");
-//
-//				System.out.println("" + id + ", " + nome + ", " + cognome);
+//		}
+//		catch (SQLException se) {
+//			System.out.println("SQLError: " + se.getMessage() + " code: " + se.getErrorCode());
+//		}
+//		catch(Exception e) {
+//			System.out.println(e.getMessage());
+//			e.printStackTrace();
+//		}
+//		finally {
+//			try {
+//				rset.close();
+//				stmt.close();
+//				conn.close();
+//			}catch (Exception e) {
+//				e.printStackTrace();
 //			}
-
-		}
-		catch (SQLException se) {
-			System.out.println("SQLError: " + se.getMessage() + " code: " + se.getErrorCode());
-		}
-		catch(Exception e) {
-			System.out.println(e.getMessage());
-			e.printStackTrace();
-		}
-		finally {
-			try {
-				rset.close();
-				stmt.close();
-				conn.close();
-			}catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-
-		response.getWriter().append("successfully saved");
+//		}
+//
+//		response.getWriter().append("successfully saved");
+//	}
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
+		String nome = request.getParameter("nome");
+		String cognome = request.getParameter("cognome");
+		String dataNascita = request.getParameter("data_nascita");
+		String luogoNascita = request.getParameter("luogo_nascita");
+		String sesso = request.getParameter("sesso");
+		String codiceFiscale = request.getParameter("codice_fiscale");
+		String telefono = request.getParameter("telefono");
+		String mail = request.getParameter("mail");
+	
+		DButils.inserimentoDipendente(nome, cognome, dataNascita, luogoNascita, sesso, codiceFiscale, telefono, mail);
+		
+		//DButils.cercaDipendente(nome, cognome);
+//		if (request.getParameter("buttonTutti") != null) {
+//            DButils.visualizzaTuttiDipendenti();
+//        }
+//		 request.getRequestDispatcher("visualizzaDipendenti.jsp").forward(request, response);
+//    }
 	}
-
-}
+	}
