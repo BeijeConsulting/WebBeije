@@ -78,14 +78,12 @@ public class ServletTest extends HttpServlet {
 			user.setDataNascita(request.getParameter("data_nascita"));
 			request.getSession().putValue("utente", user);
 			System.out.println(CSVutils.saveOnDB(user.getNome(), user.getCognome(), user.getSesso(), user.getMail(), user.getDataNascita()));
+			response.sendRedirect("user.jsp");
 		}
 		catch (NullPointerException npe) {
 			System.out.println("false");
-			request.getSession().putValue("utente", "Utente non inserito, mancano dei dati");
+			response.sendRedirect("error.jsp");
 		}
-		
-		response.sendRedirect("user.jsp");
-
 		
 	}
 

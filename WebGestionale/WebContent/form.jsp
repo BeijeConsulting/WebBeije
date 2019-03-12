@@ -7,7 +7,7 @@
 <title>DBInsertForm</title>
 </head>
 <body>
-
+<p><a title = "Torna alla home" href = "start.jsp"> <input type = "submit" value = "Home Page" /></a></p>
 <form action = "servlet" method = "post">
   Nome  : <input type = "text" name = "nome">
   <br /><br />

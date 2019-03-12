@@ -7,12 +7,11 @@
 <title>User Page</title>
 </head>
 <body>
-<% 
- %>
+<p><a title = "Torna alla home" href = "start.jsp"> <input type = "submit" value = "Home Page" /></a></p> 
 Dipendente inserito con successo!
 <br/>
 <a title = "Inserisci nuovo dipendente" href = "form.jsp"> Insert new employee</a>
 <br/>
-<a title = "Inserisci nuovo dipendente" href = "show.jsp"> Show employes</a>
+<a title = "Visualizza dipendenti" href = "show.jsp"> Show employes</a>
 </body>
 </html>
