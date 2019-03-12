@@ -18,8 +18,6 @@ if (user != null) { --%>
 FirstName : <%= utente.getFirstName() %><br>
 LastName  : <%= utente.getLastName() %>
 
-<%-- }
-else { out.print("NESSUN UTENTE IN SESSIONE"); }
---%>
+
 </body>
 </html>

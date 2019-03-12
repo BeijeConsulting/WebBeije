@@ -2,8 +2,6 @@ package it.beije.gestionale.entities;
 
 import javax.persistence.*;
 
-import org.hibernate.annotations.CollectionOfElements;
-
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
@@ -31,7 +29,7 @@ public class Dipendente {
 	private String luogoNascita;
 	
 	@Column(name = "sesso")
-	private char sesso;
+	private String sesso;
 	
 	@Column(name = "codice_fiscale")
 	private String codiceFiscale;
@@ -111,11 +109,11 @@ public class Dipendente {
 		this.luogoNascita = luogoNascita;
 	}
 
-	public char getSesso() {
+	public String getSesso() {
 		return sesso;
 	}
 
-	public void setSesso(char sesso) {
+	public void setSesso(String sesso) {
 		this.sesso = sesso;
 	}
 
