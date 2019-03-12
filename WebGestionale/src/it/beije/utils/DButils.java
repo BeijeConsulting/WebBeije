@@ -8,8 +8,8 @@ import java.sql.Statement;
 
 public class DButils {
 	
-	private static final String DB_USER = "privategriffe";
-	private static final String DB_PASSWORD = "privategriffe";
+	private static final String DB_USER = "root";
+	private static final String DB_PASSWORD = "Beije002";
 	private static final String DB_URL = "jdbc:mysql://localhost:3306/gestionale?serverTimezone=CET";
 	
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
