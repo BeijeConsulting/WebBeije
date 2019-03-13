@@ -1,4 +1,5 @@
-<%@ page import= "it.beije.utils.SearchID" %>
+<%@page import="it.beije.gestionale.entities.Dipendente"%>
+<%@ page import= "it.beije.utils.SearchNome" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -8,7 +9,9 @@
 <title>Risultati</title>
 </head>
 <body>
-  
-<% out.print(SearchID.CercaID());  %>
+ <% out.print(request.getParameter("nome"));
+out.print(SearchNome.CercaNome(request, response));%>
+
+
 </body>
 </html>

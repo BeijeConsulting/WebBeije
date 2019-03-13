@@ -1,9 +1,7 @@
 package it.beije.utils;
 
-import java.io.Reader;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -26,7 +24,7 @@ public class DButils {
 		public static void inserisciDati(String nome, String cognome, String data_nascita, String luogo_nascita, String sesso, String codice_fiscale, String telefono, String mail ) {
 		Connection conn = null;
 		Statement stmt = null;
-		ResultSet rset = null;
+
 
 		try {
 			conn = DButils.getConnection();
@@ -43,9 +41,9 @@ public class DButils {
 					
 
 			
-//			String insert = "INSERT INTO tabella_prova VALUES (null, 'antonio', 'rossi', '20/04/1990', 'Roma', 'M', 'ntnsso90d04h895l', '3289654123', 'antonio@gmail.com')";
+//			String insert = "INSERT INTO tabella_dipendenti VALUES (null, 'antonio', 'rossi', '20/04/1990', 'Roma', 'M', 'ntnsso90d04h895l', '3289654123', 'antonio@gmail.com')";
 //
-//			String query = "SELECT * from tabella_prova";
+//			String query = "SELECT * from tabella_dipendenti";
 //
 //
 //			stmt = conn.createStatement();
@@ -78,7 +76,6 @@ public class DButils {
 		}
 		finally {
 			try {
-				rset.close();
 				stmt.close();
 				conn.close();
 			}catch (Exception e) {
