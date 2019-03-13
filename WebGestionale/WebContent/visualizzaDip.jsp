@@ -14,5 +14,7 @@
 		
 		%>
 		<%= DButils.visualizzaDipendenti(nome, cognome) %>
+		<br>
+		<a href="home.html">Home</a>
 	</body>
 </html>

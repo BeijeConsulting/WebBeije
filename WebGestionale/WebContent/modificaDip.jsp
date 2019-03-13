@@ -1,4 +1,5 @@
 <%@page import="it.beije.utils.DButils"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -8,27 +9,37 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action = "" method = "get">
- 			 
- 			 Nome: <input type = "text" name = "nome" value = <% DButils.visualizzaDipendenti(Integer.parseInt(request.getParameter("id"))).get(1); %>>
+ 	<% List dip = DButils.visualizzaDipendenti(Integer.parseInt(request.getParameter("id"))); 
+ 		if(dip.size()!=1) {%>
+	<form action = "updateDip.jsp" method = "get">
+ 			
+ 			 ID: <input type = "text" name = "id" value = <%= dip.get(0) %> readonly="readonly"> 
+ 			 <br>
+ 			 Nome: <input type = "text" name = "nome" value = <%= dip.get(1) %>>
  			 <br />
- 			 Cognome: <input type = "text" name = "cognome" value = <% DButils.visualizzaDipendenti(Integer.parseInt(request.getParameter("id"))).get(2);  %>/>
+ 			 Cognome: <input type = "text" name = "cognome" value = <%=  dip.get(2)  %>>
  			  <br />
-  			Sesso: <input type = "text" name = "sesso" value = <% DButils.visualizzaDipendenti(Integer.parseInt(request.getParameter("id"))).get(6);  %>>
- 			 
+  			Sesso: <input type = "text" name = "sesso" value = <%=  dip.get(6)  %>>
+
  			 <br />
- 			  Codice fiscale: <input type = "text" name = "codice_fiscale" value = <% DButils.visualizzaDipendenti(Integer.parseInt(request.getParameter("id"))).get(3);  %>>
+ 			  Codice fiscale: <input type = "text" name = "codice_fiscale" value = <%=  dip.get(3) %>>
  			 <br />
- 			 Data di nascita: <input type = "text" name = "data_nascita" value = <% DButils.visualizzaDipendenti(Integer.parseInt(request.getParameter("id"))).get(4);  %>>
+ 			 Data di nascita: <input type = "text" name = "data_nascita" value = <%=  dip.get(4)  %>>
  			 <br />
- 			 Luogo di nascita: <input type = "text" name = "luogo_nascita" value = <% DButils.visualizzaDipendenti(Integer.parseInt(request.getParameter("id"))).get(5);  %>>
+ 			 Luogo di nascita: <input type = "text" name = "luogo_nascita" value = <%=  dip.get(5)  %>>
  			 <br />
- 			 Mail: <input type = "text" name = "mail" value = <% DButils.visualizzaDipendenti(Integer.parseInt(request.getParameter("id"))).get(8);  %>/>
+ 			 Mail: <input type = "text" name = "mail" value = <%=  dip.get(8)  %>>
  			 <br />
- 			 Telefono: <input type = "text" name = "telefono" value = <% DButils.visualizzaDipendenti(Integer.parseInt(request.getParameter("id"))).get(7);  %>/>
+ 			 Telefono: <input type = "text" name = "telefono" value = <%=  dip.get(7)  %>>
  			 <br />
-  			<input type = "submit" value = "Inserisci" />
+  			<input type = "submit" value = "Modifica" /> 
+  			<br>
+		<a href="home.html">Home</a>
 		</form>
-		
+		<%}else { %>
+		<%=dip.get(0) %>
+		<br>
+		<a href="home.html">Home</a>
+		<%} %>
 </body>
 </html>

@@ -7,12 +7,15 @@
 <title>Ricerca dipendente</title>
 </head>
 <body>
-	<form action = "visualizzaDip.jsp" method = "get">
+	<form action = "visualizzaDip.jsp" method = "post">
+			Non inserire nulla per visualizzare tutti i dipendenti <br><br>
  			 Nome: <input type = "text" name = "nome">
  			 <br />
  			 Cognome: <input type = "text" name = "cognome" />
  			  <br />
   			<input type = "submit" value = "Cerca" />
+  			<br>
+		<a href="home.html">Home</a>
 		</form>
 </body>
 </html>

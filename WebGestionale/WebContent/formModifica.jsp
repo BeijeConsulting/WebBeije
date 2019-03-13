@@ -7,9 +7,11 @@
 <title>Modifica</title>
 </head>
 <body>
-	<form action = "modificaDip.jsp" method = "get">
+	<form action = "modificaDip.jsp" method = "post">
  			 ID: <input type = "text" name = "id">
   			<input type = "submit" value = "Modifica" />
+  			<br>
+		<a href="home.html">Home</a>
 		</form>
 </body>
 </html>

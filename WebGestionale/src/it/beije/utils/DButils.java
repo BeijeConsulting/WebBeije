@@ -35,6 +35,36 @@ public class DButils {
 			
 			String insert = "INSERT INTO dipendenti (codice_fiscale, nome, cognome, sesso, data_nascita, luogo_nascita, mail, telefono) VALUES ( '"+codiceFiscale+"', '"+nome+"', '"+cognome+"', '"+sesso+"', '"+dataNascita+"', '"+luogoNascita+"', '"+mail+"', '"+telefono+"')";
 			stmt.execute(insert);
+			System.out.println(insert);
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				stmt.close();
+				conn.close();
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+	
+		
+	}
+	
+	public static void modificaDipendente(String id, String codiceFiscale, String nome, String cognome, String sesso, String dataNascita, String luogoNascita, String mail, String telefono ) {
+		Connection conn = null;
+		Statement stmt = null;
+		
+		
+		try {
+			conn = DButils.getConnection();
+			stmt = conn.createStatement();
+			//modificare
+			String update = "UPDATE dipendenti SET codice_fiscale = '"+codiceFiscale+"', nome = '"+nome+"', cognome = '"+cognome+"', sesso = '"+sesso+"', data_nascita = '"+dataNascita+"', luogo_nascita = '"+luogoNascita+"', mail = '"+mail+"', telefono = '"+telefono+"' WHERE id = '"+id+"'";
+			System.out.println(update);
+			stmt.execute(update);
 		}catch(Exception e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
@@ -67,17 +97,23 @@ public class DButils {
 				else if(nome!= "") query = "SELECT * from dipendenti WHERE NOME='"+nome+"'";
 				else query = "SELECT * from dipendenti WHERE COGNOME='"+cognome+"'";
 			
-
+			System.out.println(query);
 			stmt = conn.createStatement();
 			rset = stmt.executeQuery(query);
 			if(rset.next()==false) result="NESSUN UTENTE TROVATO";
 			else {
+				rset.beforeFirst();
 				while (rset.next()) {
 				
-					result += "ID: "+rset.getInt("id")+", ";
-					result += "NOME: "+rset.getString("nome")+", ";
-					result += "COGNOME: "+rset.getString("cognome")+", ";
-					result += "SESSO: "+rset.getString("sesso")+"<br>";
+					result += "ID: "+rset.getInt("id")+" || ";
+					result += "NOME: "+rset.getString("nome")+" || ";
+					result += "COGNOME: "+rset.getString("cognome")+" || ";
+					result += "SESSO: "+rset.getString("sesso")+" || ";
+					result += "CODICE FISCALE: "+rset.getString("codice_fiscale")+" || ";
+					result += "LUOGO DI NASCITA: "+rset.getString("luogo_nascita")+" || ";
+					result += "DATA DI NASCITA: "+rset.getString("data_nascita")+" || ";
+					result += "MAIL: "+rset.getString("mail")+" || ";
+					result += "TELEFONO: "+rset.getString("telefono")+"<br><br>";
 				
 				}
 			}
@@ -100,6 +136,7 @@ public class DButils {
 			}
 		}
 		
+		System.out.println(result);
 		return result;
 		
 	}
@@ -109,7 +146,7 @@ public class DButils {
 		Statement stmt = null;
 		ResultSet rset= null;
 		String query="", result=""; 
-		List ris = new ArrayList();
+		List  ris = new ArrayList();
 		
 		try {
 			conn = DButils.getConnection();
@@ -120,7 +157,7 @@ public class DButils {
 
 			stmt = conn.createStatement();
 			rset = stmt.executeQuery(query);
-			if(rset==null) result="NESSUN UTENTE TROVATO";
+			if(rset.next()==false) ris.add("NESSUN UTENTE TROVATO");
 			else {
 				
 				
@@ -133,7 +170,7 @@ public class DButils {
 					ris.add(rset.getString("sesso"));
 					ris.add(rset.getString("telefono"));
 					ris.add(rset.getString("mail"));
-				
+				 System.out.println(ris);
 				
 			}
 

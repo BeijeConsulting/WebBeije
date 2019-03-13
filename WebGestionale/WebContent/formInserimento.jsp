@@ -7,7 +7,7 @@
 		<title>Form Dipendente</title>
 	</head>
 	<body>
-		<form action = "servlet" method = "post">
+		<form action = "inserisciDip.jsp" method = "post">
  			 Nome: <input type = "text" name = "nome">
  			 <br />
  			 Cognome: <input type = "text" name = "cognome" />
@@ -27,6 +27,8 @@
  			 Telefono: <input type = "text" name = "telefono" />
  			 <br />
   			<input type = "submit" value = "Inserisci" />
+  			<br>
+		<a href="home.html">Home</a>
 		</form>
 	</body>
 </html>
