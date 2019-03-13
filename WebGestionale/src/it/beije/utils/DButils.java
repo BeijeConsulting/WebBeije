@@ -2,6 +2,7 @@ package it.beije.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -26,7 +27,7 @@ public class DButils {
 	public static void creaTabella() {
 		Connection conn = null;
 		Statement stmt = null;
-		ResultSet rset = null;
+//		ResultSet rset = null;
 
 		try {
 			conn = DButils.getConnection();
@@ -42,22 +43,19 @@ public class DButils {
 			stmt.executeUpdate(sql);
 			System.out.println("Created table in given database...");
 
-			String insert = "INSERT INTO dipendente VALUES (1, 'edi', 'paperetti', '20190221', 'firenze', 'M', null, null, null)";
-
-			String query = "SELECT * from dipendenti";
-
+//			String insert = "INSERT INTO dipendente VALUES (1, 'edi', 'paperetti', '20190221', 'firenze', 'M', null, null, null)";
+//			String query = "SELECT * from dipendenti";
 //		    stmt = conn.createStatement();
+//			stmt.execute(insert);
+//			rset = stmt.executeQuery(query);
 
-			stmt.execute(insert);
-			rset = stmt.executeQuery(query);
-
-			while (rset.next()) {
-				int id = rset.getInt("id");
-				String nome = rset.getString("nome");
-				String cognome = rset.getString("cognome");
-
-				System.out.println("" + id + ", " + nome + ", " + cognome);
-			}
+//			while (rset.next()) {
+//				int id = rset.getInt("id");
+//				String nome = rset.getString("nome");
+//				String cognome = rset.getString("cognome");
+//
+//				System.out.println("" + id + ", " + nome + ", " + cognome);
+//			}
 
 		} catch (SQLException se) {
 			System.out.println("SQLError: " + se.getMessage() + " code: " + se.getErrorCode());
@@ -66,7 +64,37 @@ public class DButils {
 			e.printStackTrace();
 		} finally {
 			try {
-				rset.close();
+//				rset.close();
+				stmt.close();
+				conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public static void eliminaTabella() {
+		Connection conn = null;
+		Statement stmt = null;
+
+		try {
+			conn = DButils.getConnection();
+
+			System.out.println("Dropping table in given database...");
+			stmt = conn.createStatement();
+
+			String sql = "DROP TABLE dipendenti";
+
+			stmt.executeUpdate(sql);
+			System.out.println("Dropped table in given database...");
+
+		} catch (SQLException se) {
+			System.out.println("SQLError: " + se.getMessage() + " code: " + se.getErrorCode());
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		} finally {
+			try {
 				stmt.close();
 				conn.close();
 			} catch (Exception e) {
@@ -202,7 +230,7 @@ public class DButils {
 			rset = stmt.executeQuery(query);
 
 			while (rset.next()) {
-				if (id != 0) {
+				if (rset.getInt("id") != 0) {
 					dipendente.add(String.valueOf(rset.getInt("id")));
 					dipendente.add(rset.getString("nome"));
 					dipendente.add(rset.getString("cognome"));
@@ -236,6 +264,52 @@ public class DButils {
 			}
 		}
 		return dipendente;
+	}
+
+	public static void modificaDipendente(String nome, String cognome, String dataNascita, String luogoNascita,
+			String sesso, String codiceFiscale, String telefono, String mail, int id) {
+		Connection conn = null;
+		PreparedStatement preparedStmt = null;
+
+		try {
+//			conn = DButils.getConnection();
+//			String query = "UPDATE dipendenti SET nome = '" + nome + "', cognome = '" + cognome + "', data_nascita = '"
+//					+ dataNascita + "', luogo_nascita = '" + luogoNascita + "', sesso = '" + sesso
+//					+ "', codice_fiscale = '" + codiceFiscale + "', telefono = '" + telefono + "', mail = '" + mail;
+			conn = DButils.getConnection();
+			
+			String query = "UPDATE dipendenti SET nome = ?, cognome = ?, data_nascita = ?, "
+					+ "luogo_nascita = ?, sesso = ?, codice_fiscale = ?, telefono = ?, mail = ? WHERE id = ?";
+
+			preparedStmt = conn.prepareStatement(query);
+
+			preparedStmt.setString(1, nome);
+			preparedStmt.setString(2, cognome);
+			preparedStmt.setString(3, dataNascita);
+			preparedStmt.setString(4, luogoNascita);
+			preparedStmt.setString(5, sesso);
+			preparedStmt.setString(6, codiceFiscale);
+			preparedStmt.setString(7, telefono);
+			preparedStmt.setString(8, mail);
+			preparedStmt.setInt(9, id);
+
+			preparedStmt.executeUpdate();
+
+//			preparedStmt.close();
+			conn.close();
+		} catch (SQLException se) {
+			System.out.println("SQLError: " + se.getMessage() + " code: " + se.getErrorCode());
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		} finally {
+			try {
+				preparedStmt.close();
+				conn.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 }

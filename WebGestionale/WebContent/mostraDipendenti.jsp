@@ -8,13 +8,13 @@
 <title>Lista Dipendenti</title>
 </head>
 <body>
-
 	<strong>Lista dipendenti:</strong>
 	<br>
 	<%
-		// response.getWriter().append(DButils.mostraDipendenti());
 		out.print(DButils.mostraDipendenti());
 	%><br>
+	<a href="eliminaListaDipendenti.jsp"> Elimina lista dipendenti </a>
+	<br>
 	<a href="dbDipendenti.jsp"> Torna al database dipendenti </a>
 </body>
 </html>

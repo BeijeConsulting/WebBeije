@@ -11,17 +11,12 @@
 	<%
 		String nome = request.getParameter("nome");
 		String cognome = request.getParameter("cognome");
-		// 		String id = request.getParameter("id");
-		// 		if (id == "") {
 		String dipendente = DButils.cercaDipendenteNC(nome, cognome);
 		if (dipendente != "") {
 			response.getWriter().append(dipendente);
 		} else {
 			response.getWriter().append("NESSUN UTENTE TROVATO");
 		}
-		// 		} else {
-		// 			response.getWriter().append(DButils.cercaDipendenteID(Integer.parseInt(id)));
-		// 		}
 	%>
 	<br>
 	<a href="dbDipendenti.jsp"> Torna al database dipendenti </a>
