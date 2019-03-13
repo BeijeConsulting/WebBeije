@@ -14,7 +14,7 @@
 		Cognome: <input type="text" name="cognome"> <br>
 		<input type = "submit" value = "Submit" /> <br>
 	</form> <br>
-	<form action="cercaDipendente.jsp" method="get">
+	<form action="cercaDipendenteID.jsp" method="get">
 		<i>Per id</i> <br>
 		Id: <input type="text" name="id"> <br />
 		<input type="submit" value="Submit" />
