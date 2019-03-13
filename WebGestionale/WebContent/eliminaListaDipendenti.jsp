@@ -9,15 +9,16 @@
 </head>
 <body>
 	<script type="text/javascript">
-		alert("ATTENZIONE!!! Stai per eliminare tutti i dipendenti dalla lista!");
-// 		Gia eliminato prima di alert
+		function attenzione() {
+			alert('Hai eliminato tutti i dipendenti dalla lista!');
+			window.location = "dbDipendenti.jsp";
+		}
+		attenzione();
 	</script>
+	<br>
 	<%
 		DButils.eliminaTabella();
 		DButils.creaTabella();
-		response.getWriter().append("Hai eliminato tutti i dipendenti dalla lista!");
 	%>
-	<br>
-	<a href="dbDipendenti.jsp"> Torna al database dipendenti </a>
 </body>
 </html>

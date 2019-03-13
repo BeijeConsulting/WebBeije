@@ -230,7 +230,6 @@ public class DButils {
 			rset = stmt.executeQuery(query);
 
 			while (rset.next()) {
-				if (rset.getInt("id") != 0) {
 					dipendente.add(String.valueOf(rset.getInt("id")));
 					dipendente.add(rset.getString("nome"));
 					dipendente.add(rset.getString("cognome"));
@@ -240,12 +239,6 @@ public class DButils {
 					dipendente.add(rset.getString("codice_fiscale"));
 					dipendente.add(rset.getString("telefono"));
 					dipendente.add(rset.getString("mail"));
-
-//					dipendente = rset.getInt("id") + ": " + rset.getString("nome") + " " + rset.getString("cognome")
-//							+ ", " + rset.getString("data_nascita") + ", " + rset.getString("luogo_nascita") + ", "
-//							+ rset.getString("sesso") + ", " + rset.getString("codice_fiscale") + ", "
-//							+ rset.getString("telefono") + ", " + rset.getString("mail") + ";";
-				}
 			}
 			rset.close();
 			stmt.close();
@@ -272,10 +265,6 @@ public class DButils {
 		PreparedStatement preparedStmt = null;
 
 		try {
-//			conn = DButils.getConnection();
-//			String query = "UPDATE dipendenti SET nome = '" + nome + "', cognome = '" + cognome + "', data_nascita = '"
-//					+ dataNascita + "', luogo_nascita = '" + luogoNascita + "', sesso = '" + sesso
-//					+ "', codice_fiscale = '" + codiceFiscale + "', telefono = '" + telefono + "', mail = '" + mail;
 			conn = DButils.getConnection();
 			
 			String query = "UPDATE dipendenti SET nome = ?, cognome = ?, data_nascita = ?, "
@@ -295,7 +284,7 @@ public class DButils {
 
 			preparedStmt.executeUpdate();
 
-//			preparedStmt.close();
+			preparedStmt.close();
 			conn.close();
 		} catch (SQLException se) {
 			System.out.println("SQLError: " + se.getMessage() + " code: " + se.getErrorCode());

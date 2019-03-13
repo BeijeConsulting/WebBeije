@@ -10,7 +10,6 @@
 <title>Cerca dipendente</title>
 </head>
 <body>
-	<form action="modificaAvvenuta.jsp" method="post">
 		<%
 			String id = request.getParameter("id");
 			List<String> dipendenti = new ArrayList<>();
@@ -36,32 +35,37 @@
 				codiceFiscale = dipendenti.get(6);
 				telefono = dipendenti.get(7);
 				mail = dipendenti.get(8);
-			} else {
+			%>
+			<form action="modificaAvvenuta.jsp" method="post">
+				<input type="hidden" name="id" value="<%=id%>">
+				Nome: <input type="text" name="nome" value="<%=nome%>"> <br />
+				Cognome: <input type = "text" name = "cognome" value="<%=cognome%>">
+				<br/>
+				Data di nascita: <input type = "text" name = "data_nascita" value="<%=dataNascita%>">
+				<br/>
+				Luogo di nascita: <input type = "text" name = "luogo_nascita" value="<%=luogoNascita%>">
+				<br/>
+				Sesso: 
+				<% if(sesso == "M") { %>
+					<input type="radio" name="sesso" value ="M" checked="checked"> M
+					<input type="radio" name="sesso" value = "F"> F
+				<% } else { %>
+					<input type="radio" name="sesso" value ="M"> M
+					<input type="radio" name="sesso" value = "F" checked="checked"> F
+				<% } %>
+				<br/>
+				Codice Fiscale: <input type = "text" name = "codice_fiscale" value="<%=codiceFiscale%>">
+				<br/>
+				Telefono: <input type = "text" name = "telefono" value="<%=telefono%>">
+				<br/>
+				Mail: <input type = "text" name = "mail" value="<%=mail%>">
+				<br/>
+				<input type="submit" value="Submit" />
+			</form>
+			<% } else {
 				response.getWriter().append("NESSUN UTENTE TROVATO");
 			}
 		%>
-
-		<input type="hidden" name="id" value="<%=id%>">
-		Nome: <input type="text" name="nome" value="<%=nome%>"> <br />
-		Cognome: <input type = "text" name = "cognome" value="<%=cognome%>">
-		<br/>
-		Data di nascita: <input type = "text" name = "data_nascita" value="<%=dataNascita%>">
-		<br/>
-		Luogo di nascita: <input type = "text" name = "luogo_nascita" value="<%=luogoNascita%>">
-		<br/>
-		Sesso: 
-		<input type="radio" name="sesso" value ="M" value="<%=sesso%>"> M
-		<input type="radio" name="sesso" value = "F" value="<%=sesso%>"> F
-		<br/>
-		Codice Fiscale: <input type = "text" name = "codice_fiscale" value="<%=codiceFiscale%>">
-		<br/>
-		Telefono: <input type = "text" name = "telefono" value="<%=telefono%>">
-		<br/>
-		Mail: <input type = "text" name = "mail" value="<%=mail%>">
-		<br/>
-		<input type="submit" value="Submit" />
-
-	</form>
 	<br>
 	<a href="dbDipendenti.jsp"> Torna al database dipendenti </a>
 </body>
