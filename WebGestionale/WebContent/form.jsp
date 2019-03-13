@@ -30,6 +30,6 @@ LastName  : <%= utente.getLastName() %>
 --%>
 
 <br/>
-<a title = "Inserisci nuovo dipendente" href = "show.jsp"> Show employes</a>
+<a title = "Inserisci nuovo dipendente" href = "show.jsp">Visualizza dipendenti</a>
 </body>
 </html>

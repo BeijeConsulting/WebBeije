@@ -10,8 +10,8 @@
 <p><a title = "Torna alla home" href = "start.jsp"> <input type = "submit" value = "Home Page" /></a></p> 
 Dipendente inserito con successo!
 <br/>
-<a title = "Inserisci nuovo dipendente" href = "form.jsp"> Insert new employee</a>
+<a title = "Inserisci nuovo dipendente" href = "form.jsp"> Inserisci un altro dipendente</a>
 <br/>
-<a title = "Visualizza dipendenti" href = "show.jsp"> Show employes</a>
+<a title = "Visualizza dipendenti" href = "show.jsp"> Visualizza tutti i dipendenti</a>
 </body>
 </html>

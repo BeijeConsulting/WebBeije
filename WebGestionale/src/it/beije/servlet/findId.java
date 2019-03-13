@@ -12,37 +12,34 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import it.beije.gestionale.entities.Dipendente;
 import it.beije.utils.DButils;
 
 /**
- * Servlet implementation class Find
+ * Servlet implementation class findId
  */
-@WebServlet("/find")
-public class Find extends HttpServlet {
+@WebServlet("/findId")
+public class findId extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Find() {
+    public findId() {
         super();
         // TODO Auto-generated constructor stub
     }
     
-    public static StringBuilder searchDipendenti(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	StringBuilder sb = new StringBuilder();
+    public static Dipendente searchDipendentiId(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	
+    	Dipendente user = new Dipendente();
     	String query = null;
     	
-    	if(request.getParameter("nome") != "") {
-    		if(request.getParameter("cognome") != "") {
-    			query = "SELECT * from dipendenti where nome = '" + request.getParameter("nome") + "' && cognome = '" + request.getParameter("cognome") + "'";
-    		}
-    		else {
-    			query = "SELECT * from dipendenti where nome = '" + request.getParameter("nome") + "'";
-    		}
-    	} else if (request.getParameter("cognome") != "") {
-    		query = "SELECT * from dipendenti where cognome = '" + request.getParameter("cognome") + "'";
-    	} else {
+    	if(request.getParameter("id") != "") {
+    		query = "SELECT * from dipendenti where id = " + request.getParameter("id");
+    		System.out.println(query);
+    	} 
+        else {
     		response.sendRedirect("error.jsp");
     	}
     	
@@ -66,18 +63,13 @@ public class Find extends HttpServlet {
 			}
 
 			while (rset.next()) {
-				int id = rset.getInt("id");
-				String nome = rset.getString("nome");
-				String cognome = rset.getString("cognome");
-				char sesso = rset.getString("sesso").charAt(0);
-				String dataNascita = rset.getString("data_nascita");
-				String mail = rset.getString("mail");
-
-				sb.append(id).append("&nbsp&nbsp").append(nome).append("&nbsp,&nbsp").append(cognome).append("&nbsp,&nbsp")
-				.append(sesso).append("&nbsp,&nbsp").append(dataNascita).append("&nbsp,&nbsp").append(mail).append("<br>");
-
+				System.out.println(rset.getString("nome"));
+				user.setNome(rset.getString("nome"));
+				user.setCognome(rset.getString("cognome"));
+				user.setSesso(rset.getString("sesso").charAt(0));
+				user.setMail(rset.getString("mail"));
+				user.setDataNascita(rset.getString("data_nascita"));
 			}
-
 		}
 		catch (SQLException se) {
 			System.out.println("SQLError: " + se.getMessage() + " code: " + se.getErrorCode());
@@ -95,16 +87,15 @@ public class Find extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-    	return sb;
+    	return user;
     }
-    
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		response.getWriter().append(searchDipendenti(request, response));
+		
 	}
 
 	/**
@@ -112,9 +103,9 @@ public class Find extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.setContentType("text/html");
-		response.getWriter().append(searchDipendenti(request, response));
-		response.getWriter().append("<p><a title = \"Torna alla home\" href = \"start.jsp\"> <input type = \"submit\" value = \"Home Page\" /></a></p>");
+		Dipendente dip = searchDipendentiId(request, response);
+		request.getSession().putValue("dipendente", dip);
+		response.sendRedirect("FormId.jsp");
 	}
 
 }

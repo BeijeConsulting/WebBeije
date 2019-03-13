@@ -68,21 +68,18 @@ public class ServletTest extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		try {
+		if(request.getParameter("nome") == "" || request.getParameter("cognome") == "" || request.getParameter("sesso") == "" 
+				|| request.getParameter("mail") == "" || request.getParameter("data_nascita") == "" ) {
+			response.sendRedirect("error.jsp");
+		}
+		else {
 			Dipendente user = new Dipendente();
 			user.setNome(request.getParameter("nome"));
 			user.setCognome(request.getParameter("cognome"));
 			user.setSesso(request.getParameter("sesso").charAt(0));
 			user.setMail(request.getParameter("mail"));
 			user.setDataNascita(request.getParameter("data_nascita"));
-			request.getSession().putValue("utente", user);
 			System.out.println(CSVutils.saveOnDB(user.getNome(), user.getCognome(), user.getSesso(), user.getMail(), user.getDataNascita()));
-			response.sendRedirect("user.jsp");
-		}
-		catch (NullPointerException npe) {
-			System.out.println("false");
-			response.sendRedirect("error.jsp");
 		}
 		
 	}

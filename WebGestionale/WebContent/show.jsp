@@ -9,8 +9,16 @@
 </head>
 <body>
 <p><a title = "Torna alla home" href = "start.jsp"> <input type = "submit" value = "Home Page" /></a></p>
- <% out.print(CSVutils.selectFromDB()); %>
- <br/>
- <a title = "Inserisci nuovo dipendente" href = "form.jsp"> Insert new employee</a>
+<button  onclick="mostraDip()">Visualizza dipendenti</button>
+<p id="show"></p>
+<script>
+function mostraDip() {
+	<% String str =  CSVutils.selectFromDB().toString(); %>
+	var s = "<%= str %>"
+	document.getElementById("show").innerHTML = s;
+}
+</script>
+ <br/><br/>
+ <a title = "Inserisci nuovo dipendente" href = "form.jsp"> Inserisci nuovo dipendente</a>
 </body>
 </html>
