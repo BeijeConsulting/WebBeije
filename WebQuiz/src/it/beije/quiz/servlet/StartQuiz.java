@@ -33,7 +33,7 @@ public class StartQuiz extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if (request.getRequestURI().equals(request.getContextPath()+"/StartQuiz")) {
-			List<Domanda> domande = Utils.readFileDomande("C:\\temp\\20180311.xml");
+			List<Domanda> domande = Utils.readFileDomande("/Users/bastard-mac_sss/git/WebBeije/WebQuiz/WebContent/domande/20180311.xml");
 			
 			request.getSession().putValue("elencoDomande", domande);
 			//request.getSession().putValue("indice", new Integer(0));
