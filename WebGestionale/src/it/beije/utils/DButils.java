@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class DButils {
 	
@@ -144,6 +145,53 @@ public class DButils {
 	return result;
 	}
 	
+	// RICERCA DIPENDENTE BY ID
+	
+	public static ArrayList<String> ricercaDipendenteById(String id) {
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rset= null;
+		ArrayList<String> result = new ArrayList<String>();
+		try {
+			conn = DButils.getConnection();
+
+			String query = "SELECT * FROM dipendente WHERE ( id = '"+id+"')";
+			stmt = conn.createStatement();
+
+			//stmt.execute(insert);
+			rset = stmt.executeQuery(query);
+			while (rset.next()) {
+				//result += rset.getInt("id") + " " +  rset.getString("nome") + " " + rset.getString("cognome") + "<br>";
+				result.add(String.valueOf(rset.getInt("id")));
+				result.add(rset.getString("nome"));
+				result.add(rset.getString("cognome"));
+				result.add(rset.getString("data_nascita"));
+				result.add(rset.getString("luogo_nascita"));
+				result.add(rset.getString("sesso"));
+				result.add(rset.getString("codice_fiscale"));
+				result.add(rset.getString("telefono"));
+				result.add(rset.getString("mail"));
+			}
+			
+		}
+		catch (SQLException se) {
+			System.out.println("SQLError: " + se.getMessage() + " code: " + se.getErrorCode());
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				rset.close();
+				stmt.close();
+				conn.close();
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
 }
 
 //	public static void main(String argv[]) {

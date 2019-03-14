@@ -15,6 +15,13 @@
   <input type = "submit" value = "Cerca dipendente"  />
 </form>
 	<br>
+	
+	Ricerca un dipendente per id e modifica: <br>
+	<form action = "formModifica.jsp">
+	ID: <input type = "text" name="id">
+	<input type = "submit" value = "Ricerca ID">
+	</form>
+	<br>
 	Se invece vuoi visualizzare tutti i dipendenti clicca qui:
 	
   <input type = "submit" value = "Visualizza i dipendenti" name="buttonTutti" onclick="myFunction()" />
@@ -23,8 +30,8 @@
   <script type="text/javascript">
   function myFunction()
   {
-	  <% String str=DButils.visualizzaTuttiDipendenti(); %>
-	   var s="<%=str%>"; 
+	  <% String str = DButils.visualizzaTuttiDipendenti(); %>
+	   var s = "<%=str%>"; 
 	   document.getElementById("demo").innerHTML = s;
   }
   

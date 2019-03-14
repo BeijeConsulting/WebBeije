@@ -50,34 +50,6 @@ public class Test extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		
-//		Connection conn = null;
-//		Statement stmt = null;
-//		ResultSet rset= null;
-//
-//		try {
-//			conn = DButils.getConnection();
-//
-//		}
-//		catch (SQLException se) {
-//			System.out.println("SQLError: " + se.getMessage() + " code: " + se.getErrorCode());
-//		}
-//		catch(Exception e) {
-//			System.out.println(e.getMessage());
-//			e.printStackTrace();
-//		}
-//		finally {
-//			try {
-//				rset.close();
-//				stmt.close();
-//				conn.close();
-//			}catch (Exception e) {
-//				e.printStackTrace();
-//			}
-//		}
-//
-//		response.getWriter().append("successfully saved");
-//	}
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -96,12 +68,42 @@ public class Test extends HttpServlet {
 		String mail = request.getParameter("mail");
 	
 		DButils.inserimentoDipendente(nome, cognome, dataNascita, luogoNascita, sesso, codiceFiscale, telefono, mail);
-		
-		//DButils.cercaDipendente(nome, cognome);
-//		if (request.getParameter("buttonTutti") != null) {
-//            DButils.visualizzaTuttiDipendenti();
-//        }
-//		 request.getRequestDispatcher("visualizzaDipendenti.jsp").forward(request, response);
-//    }
+	
 	}
 	}
+
+
+//DButils.cercaDipendente(nome, cognome);
+//if (request.getParameter("buttonTutti") != null) {
+//    DButils.visualizzaTuttiDipendenti();
+//}
+// request.getRequestDispatcher("visualizzaDipendenti.jsp").forward(request, response);
+//}
+
+//Connection conn = null;
+//Statement stmt = null;
+//ResultSet rset= null;
+//
+//try {
+//	conn = DButils.getConnection();
+//
+//}
+//catch (SQLException se) {
+//	System.out.println("SQLError: " + se.getMessage() + " code: " + se.getErrorCode());
+//}
+//catch(Exception e) {
+//	System.out.println(e.getMessage());
+//	e.printStackTrace();
+//}
+//finally {
+//	try {
+//		rset.close();
+//		stmt.close();
+//		conn.close();
+//	}catch (Exception e) {
+//		e.printStackTrace();
+//	}
+//}
+//
+//response.getWriter().append("successfully saved");
+//}
