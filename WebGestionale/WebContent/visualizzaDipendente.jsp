@@ -13,5 +13,6 @@
 	String cognome = request.getParameter("cognome");%>
 	
 	<%= DButils.visualizzadip(nome,cognome) %>
+	
 </body>
 </html>

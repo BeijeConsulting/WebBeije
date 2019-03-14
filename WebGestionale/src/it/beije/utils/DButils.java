@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DButils {
 	
@@ -31,7 +33,7 @@ public class DButils {
 			conn = DButils.getConnection();
 			stmt = conn.createStatement();
 
-			String insert = "INSERT INTO dipendente (nome,cognome,data_nascita,luogo_nascita,genere,telefono,Mail) VALUES "
+			String insert = "INSERT INTO dipendente (nome,cognome,data_nascita,luogo_nascita,genere,telefono,email) VALUES "
 					+ "('"+nome+"', '"+cognome+"','"+data_nascita+"','"+luogo_nascita+"','"+genere+"','"+telefono+"','"+email+"')";
 			stmt.execute(insert);
 		}catch (Exception e){
@@ -47,6 +49,79 @@ public class DButils {
 			}	
 		}
 	}
+	
+	public static void modificadipendente (String ID, String nome, String cognome,String data_nascita,
+			String luogo_nascita, String genere, String telefono,String email) {
+
+		Connection conn = null;
+		Statement stmt = null;
+
+		try {
+			conn = DButils.getConnection();
+			stmt = conn.createStatement();
+
+			String update = "UPDATE dipendente nome = '"+nome+"',cognome = '"+cognome+"',data_nascita = '"+data_nascita+"',luogo_nascita = '"+luogo_nascita+"',genere = '"+genere+"',telefono = '"+telefono+"',email = '"+email+"') Where ID = '"+ID+"' ";
+					
+			stmt.execute(update);
+		}catch (Exception e){
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				stmt.close();
+				conn.close();
+			}catch (Exception e) {
+				e.printStackTrace();
+			}	
+		}
+	}
+	
+	public static List visualizzadip (int ID) {
+		
+		Connection conn = null;
+		Statement stmt = null;
+		String query = "";
+		ResultSet rset = null;
+		List risultato = new ArrayList ();
+		
+		try {
+			conn = DButils.getConnection();
+			stmt = conn.createStatement();
+			
+			query = "Select * from dipendente where id = '"+ID+"' "; 
+			
+		rset = stmt.executeQuery(query);
+	
+		if (rset.next()==false) risultato.add("Nessun risultato trovato"); 
+		else {
+			
+			risultato.add(rset.getInt("ID"));
+			risultato.add(rset.getString("nome"));
+			risultato.add(rset.getString("cognome"));
+			risultato.add(rset.getString("data_nascita"));
+			risultato.add(rset.getString("luogo_nascita"));
+			risultato.add(rset.getString("genere"));
+			risultato.add(rset.getString("telefono"));
+			risultato.add(rset.getString("email"));
+		}
+		
+		}catch (Exception e){
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				stmt.close();
+				conn.close();
+			}catch (Exception e) {
+				e.printStackTrace();
+			}	
+		}
+		return risultato;
+	}
+		
+
 	
 	public static String visualizzadip(String nome, String cognome) {
 		
