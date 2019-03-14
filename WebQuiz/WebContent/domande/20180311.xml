@@ -13,7 +13,7 @@ B. II only
 C. I and II
 D. I, II, and III
 		</testo>
-		<risposta>C</risposta>
+		<risposteEsatte>C</risposteEsatte>
 	</domanda>
 	<domanda id="22" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="3" question="38">
 		<testo>
@@ -39,7 +39,7 @@ B. double
 C. int
 D. None of the above
 		</testo>
-		<risposta>D</risposta>
+		<risposteEsatte>D</risposteEsatte>
 	</domanda>
 	<domanda id="21" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="3" question="40">
 		<testo>
@@ -59,7 +59,7 @@ B. Turtle wins!
 C. The code does not compile.
 D. The code compiles but throws a division by zero error at runtime.
 		</testo>
-		<risposta>B</risposta>
+		<risposteEsatte>B</risposteEsatte>
 	</domanda>
 	<domanda id="4" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="1" question="44">
 		<testo>
@@ -78,7 +78,7 @@ B. false false
 C. It does not compile.
 D. It compiles but throws an exception at runtime.
 		</testo>
-		<risposta>C</risposta>
+		<risposteEsatte>C</risposteEsatte>
 	</domanda>
 	<domanda id="49" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="7" question="45">
 		<testo>
@@ -89,7 +89,7 @@ B. Inherited, overridden
 C. Overridden, overloaded
 D. None of the above
 		</testo>
-		<risposta>D</risposta>
+		<risposteEsatte>D</risposteEsatte>
 	</domanda>
 	<domanda id="50" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="7" question="43">
 		<testo>
@@ -100,7 +100,7 @@ B. default
 C. static
 D. abstract
 		</testo>
-		<risposta>A</risposta>
+		<risposteEsatte>A</risposteEsatte>
 	</domanda>
 	<domanda id="6" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="1" question="40">
 		<testo>
@@ -120,7 +120,7 @@ B. The code does not compile because of line 3.
 C. The code does not compile because of line 6.
 D. The code compiles without issue.
 		</testo>
-		<risposta>C</risposta>
+		<risposteEsatte>C</risposteEsatte>
 	</domanda>
 	<domanda id="9" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="2" question="48">
 		<testo>
@@ -148,7 +148,7 @@ B. play-play-
 C. play-play-clean-
 D. play-play-clean-clean-
 		</testo>
-		<risposta>A</risposta>
+		<risposteEsatte>A</risposteEsatte>
 	</domanda>
 	<domanda id="12" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="2" question="45">
 		<testo>
@@ -162,7 +162,7 @@ B. int, Integer
 C. Integer, int
 D. Integer, Integer
 		</testo>
-		<risposta>B</risposta>
+		<risposteEsatte>B</risposteEsatte>
 	</domanda>
 	<domanda id="31" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="5" question="48">
 		<testo>
@@ -183,7 +183,7 @@ B. 8
 C. The code does not compile.
 D. The code compiles but throws an exception at runtime.
 		</testo>
-		<risposta>C</risposta>
+		<risposteEsatte>C</risposteEsatte>
 	</domanda>
 	<domanda id="13" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="2" question="43">
 		<testo>
@@ -211,7 +211,7 @@ B. play-play-
 C. play-clean-play-
 D. play-play-clean-clean-
 		</testo>
-		<risposta>B</risposta>
+		<risposteEsatte>B</risposteEsatte>
 	</domanda>
 	<domanda id="61" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="9" question="48">
 		<testo>
@@ -230,7 +230,7 @@ B. 1
 C. The code does not compile.
 D. The code compiles but throws an exception at runtime.
 		</testo>
-		<risposta>D</risposta>
+		<risposteEsatte>D</risposteEsatte>
 	</domanda>
 	<domanda id="15" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="3" question="49">
 		<testo>
@@ -241,7 +241,7 @@ B. --, -, *
 C. ++, /, *
 D. *, ++, %
 		</testo>
-		<risposta>A</risposta>
+		<risposteEsatte>A</risposteEsatte>
 	</domanda>
 	<domanda id="16" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="3" question="47">
 		<testo>
@@ -252,7 +252,7 @@ B. 11
 C. 16
 D. None of the above
 		</testo>
-		<risposta>D</risposta>
+		<risposteEsatte>D</risposteEsatte>
 	</domanda>
 	<domanda id="17" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="3" question="45">
 		<testo>
@@ -263,7 +263,7 @@ B. any number of, at most one
 C. at least one, any number of
 D. at least one, at most one
 		</testo>
-		<risposta>B</risposta>
+		<risposteEsatte>B</risposteEsatte>
 	</domanda>
 	<domanda id="11" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="2" question="46">
 		<testo>
@@ -288,7 +288,7 @@ B. One
 C. Two
 D. Three
 		</testo>
-		<risposta>B</risposta>
+		<risposteEsatte>B</risposteEsatte>
 	</domanda>
 	<domanda id="19" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="3" question="43">
 		<testo>
@@ -299,7 +299,7 @@ B. &amp;&amp;, !
 C. |, -
 D. ||, !
 		</testo>
-		<risposta>D</risposta>
+		<risposteEsatte>D</risposteEsatte>
 	</domanda>
 	<domanda id="20" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="3" question="41">
 		<testo>
@@ -320,7 +320,7 @@ B. 1
 C. 0000
 D. 1000
 		</testo>
-		<risposta>A</risposta>
+		<risposteEsatte>A</risposteEsatte>
 	</domanda>
 	<domanda id="67" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="9" question="39">
 		<testo>
@@ -336,7 +336,7 @@ B. happy.substring(0, happy.length())
 C. happy.substring(1, happy.length() - 1)
 D. happy.substring(1, happy.length())
 		</testo>
-		<risposta>C</risposta>
+		<risposteEsatte>C</risposteEsatte>
 	</domanda>
 	<domanda id="70" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="9" question="26">
 		<testo>
@@ -354,7 +354,7 @@ B. (Object o)
 C. (String s)
 D. None of the above
 		</testo>
-		<risposta>D</risposta>
+		<risposteEsatte>D</risposteEsatte>
 	</domanda>
 	<domanda id="23" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="4" question="50">
 		<testo>
@@ -375,7 +375,7 @@ B. 1
 C. The code does not compile.
 D. The code compiles but throws an exception at runtime.
 		</testo>
-		<risposta>C</risposta>
+		<risposteEsatte>C</risposteEsatte>
 	</domanda>
 	<domanda id="18" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="3" question="44">
 		<testo>
@@ -390,7 +390,7 @@ B. 3.0
 C. The code does not compile but would compile if parentheses were added.
 D. None of the above
 		</testo>
-		<risposta>A</risposta>
+		<risposteEsatte>A</risposteEsatte>
 	</domanda>
 	<domanda id="25" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="4" question="47">
 		<testo>
@@ -404,7 +404,7 @@ B. 1
 C. 2
 D. The output is not defined.
 		</testo>
-		<risposta>A</risposta>
+		<risposteEsatte>A</risposteEsatte>
 	</domanda>
 	<domanda id="68" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="9" question="34">
 		<testo>
@@ -418,7 +418,7 @@ B. false
 C. The code does not compile.
 D. The code compiles but throws an exception at runtime.
 		</testo>
-		<risposta>B</risposta>
+		<risposteEsatte>B</risposteEsatte>
 	</domanda>
 	<domanda id="27" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="4" question="45">
 		<testo>
@@ -434,7 +434,7 @@ B. Seven
 C. The code does not compile.
 D. The code compiles but throws an exception at runtime.
 		</testo>
-		<risposta>A</risposta>
+		<risposteEsatte>A</risposteEsatte>
 	</domanda>
 	<domanda id="28" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="4" question="42">
 		<testo>
@@ -457,7 +457,7 @@ B. The code does not compile.
 C. The code compiles but throws a NullPointerException at runtime.
 D. The code compiles but throws a different exception at runtime.
 		</testo>
-		<risposta>B</risposta>
+		<risposteEsatte>B</risposteEsatte>
 	</domanda>
 	<domanda id="35" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="5" question="43">
 		<testo>
@@ -478,7 +478,7 @@ B. Four
 C. The code does not compile.
 D. The code compiles but throws an exception at runtime.
 		</testo>
-		<risposta>B</risposta>
+		<risposteEsatte>B</risposteEsatte>
 	</domanda>
 	<domanda id="30" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="5" question="50">
 		<testo>
@@ -499,7 +499,7 @@ B. int i=0, j=0;
 C. int i=0; int j=0;
 D. int i=0, int j=0;
 		</testo>
-		<risposta>B</risposta>
+		<risposteEsatte>B</risposteEsatte>
 	</domanda>
 	<domanda id="47" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="7" question="47">
 		<testo>
@@ -510,7 +510,7 @@ B. object type, superclass
 C. reference type, object type
 D. object type, reference type
 		</testo>
-		<risposta>D</risposta>
+		<risposteEsatte>D</risposteEsatte>
 	</domanda>
 	<domanda id="32" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="5" question="47">
 		<testo>
@@ -530,7 +530,7 @@ B. shoelace
 C. shoelaceshoelace
 D. None of the above
 		</testo>
-		<risposta>D</risposta>
+		<risposteEsatte>D</risposteEsatte>
 	</domanda>
 	<domanda id="33" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="5" question="45">
 		<testo>
@@ -545,7 +545,7 @@ B. alpha, beta, delta, gamma, beta
 C. alpha, delta, gamma, alpha, beta
 D. alpha, beta, delta, gamma, alpha, beta
 		</testo>
-		<risposta>B</risposta>
+		<risposteEsatte>B</risposteEsatte>
 	</domanda>
 	<domanda id="26" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="4" question="46">
 		<testo>
@@ -562,7 +562,7 @@ B. 1
 C. 2
 D. The code does not compile.
 		</testo>
-		<risposta>B</risposta>
+		<risposteEsatte>B</risposteEsatte>
 	</domanda>
 	<domanda id="34" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="5" question="44">
 		<testo>
@@ -577,7 +577,7 @@ B. alpha, beta
 C. alpha, beta, gamma
 D. None of the above
 		</testo>
-		<risposta>B</risposta>
+		<risposteEsatte>B</risposteEsatte>
 	</domanda>
 	<domanda id="1" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="1" question="50">
 		<testo>
@@ -589,7 +589,7 @@ C. The JVM requires a properly defined entry point method to execute the
 application.
 D. A Java compiled code can be run on any computer.
 		</testo>
-		<risposta>C</risposta>
+		<risposteEsatte>C</risposteEsatte>
 	</domanda>
 	<domanda id="36" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="5" question="41">
 		<testo>
@@ -606,7 +606,7 @@ B. break f;
 C. break t;
 D. None of the above
 		</testo>
-		<risposta>C</risposta>
+		<risposteEsatte>C</risposteEsatte>
 	</domanda>
 	<domanda id="65" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="9" question="42">
 		<testo>
@@ -624,7 +624,7 @@ B. [3, 2]
 C. The code does not compile.
 D. The code compiles but throws an exception at runtime.
 		</testo>
-		<risposta>B</risposta>
+		<risposteEsatte>B</risposteEsatte>
 	</domanda>
 	<domanda id="39" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="6" question="47">
 		<testo>
@@ -646,7 +646,7 @@ B. The code does not compile because of line m1.
 C. The code does not compile because of line m2.
 D. The code compiles but throws an exception at runtime.
 		</testo>
-		<risposta>C</risposta>
+		<risposteEsatte>C</risposteEsatte>
 	</domanda>
 	<domanda id="7" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="1" question="39">
 		<testo>
@@ -657,7 +657,7 @@ B. .class
 C. .source
 D. .java
 		</testo>
-		<risposta>D</risposta>
+		<risposteEsatte>D</risposteEsatte>
 	</domanda>
 	<domanda id="8" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="2" question="49">
 		<testo>
@@ -668,7 +668,7 @@ B. Call the constructor of the wrapper class
 C. Call the convertToObject() method
 D. Call the toObject() method
 		</testo>
-		<risposta>B</risposta>
+		<risposteEsatte>B</risposteEsatte>
 	</domanda>
 	<domanda id="40" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="6" question="45">
 		<testo>
@@ -695,7 +695,7 @@ B. 6
 C. 8
 D. The code does not compile.
 		</testo>
-		<risposta>D</risposta>
+		<risposteEsatte>D</risposteEsatte>
 	</domanda>
 	<domanda id="55" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="8" question="45">
 		<testo>
@@ -706,7 +706,7 @@ B. The catch block for ClassCastException must appear before the catch block for
 C. The catch blocks for these two exception types can be declared in any order.
 D. A try statement cannot be declared with these two catch block types because they are incompatible.
 		</testo>
-		<risposta>C</risposta>
+		<risposteEsatte>C</risposteEsatte>
 	</domanda>
 	<domanda id="38" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="6" question="48">
 		<testo>
@@ -717,7 +717,7 @@ B. \jog13()
 C. walk#()
 D. %run()
 		</testo>
-		<risposta>A</risposta>
+		<risposteEsatte>A</risposteEsatte>
 	</domanda>
 	<domanda id="43" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="6" question="41">
 		<testo>
@@ -730,7 +730,7 @@ B. call(5)
 C. call(2,"home","sweet")
 D. call("answering","service")
 		</testo>
-		<risposta>C</risposta>
+		<risposteEsatte>C</risposteEsatte>
 	</domanda>
 	<domanda id="37" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="5" question="40">
 		<testo>
@@ -749,7 +749,7 @@ B. 3
 C. The code does not compile.
 D. This is an infinite loop.
 		</testo>
-		<risposta>A</risposta>
+		<risposteEsatte>A</risposteEsatte>
 	</domanda>
 	<domanda id="45" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="7" question="50">
 		<testo>
@@ -773,7 +773,7 @@ B. false
 C. The code does not compile.
 D. The code compiles but produces an exception at runtime.
 		</testo>
-		<risposta>C</risposta>
+		<risposteEsatte>C</risposteEsatte>
 	</domanda>
 	<domanda id="46" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="7" question="49">
 		<testo>
@@ -784,7 +784,7 @@ B. Add backward compatibility to existing interfaces.
 C. Give an interface the ability to create concrete methods.
 D. Allow an interface to define a method at the class level.
 		</testo>
-		<risposta>B</risposta>
+		<risposteEsatte>B</risposteEsatte>
 	</domanda>
 	<domanda id="10" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="2" question="47">
 		<testo>
@@ -798,7 +798,7 @@ B. public TennisBall static newInstance() { return new TennisBall():}
 C. public TennisBall() {}
 D. public void TennisBall() {}
 		</testo>
-		<risposta>C</risposta>
+		<risposteEsatte>C</risposteEsatte>
 	</domanda>
 	<domanda id="48" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="7" question="46">
 		<testo>
@@ -809,7 +809,7 @@ B. If a parent class does not include a no-argument constructor (nor a default o
 C. If a parent class contains a no-argument constructor, a child class must contain a no-argument constructor.
 D. If a parent class contains a no-argument constructor, a child class must contain at least one constructor.
 		</testo>
-		<risposta>B</risposta>
+		<risposteEsatte>B</risposteEsatte>
 	</domanda>
 	<domanda id="5" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="1" question="43">
 		<testo>
@@ -829,7 +829,7 @@ B. 1
 C. 2
 D. 3
 		</testo>
-		<risposta>A</risposta>
+		<risposteEsatte>A</risposteEsatte>
 	</domanda>
 	<domanda id="42" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="6" question="42">
 		<testo>
@@ -840,7 +840,7 @@ B. It is not possible to read static final variables outside the class in which 
 C. It is not possible to reference static methods using static imports.
 D. A static variable is always available in all instances of the class.
 		</testo>
-		<risposta>D</risposta>
+		<risposteEsatte>D</risposteEsatte>
 	</domanda>
 	<domanda id="51" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="7" question="42">
 		<testo>
@@ -863,7 +863,7 @@ B. new Dog()
 C. new Wolf()
 D. null
 		</testo>
-		<risposta>C</risposta>
+		<risposteEsatte>C</risposteEsatte>
 	</domanda>
 	<domanda id="3" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="1" question="46">
 		<testo>
@@ -886,7 +886,7 @@ B. purple
 C. blue
 D. It does not compile.
 		</testo>
-		<risposta>B</risposta>
+		<risposteEsatte>B</risposteEsatte>
 	</domanda>
 	<domanda id="53" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="8" question="48">
 		<testo>
@@ -897,7 +897,7 @@ B. The application temporarily loses connection to the network.
 C. A user enters their password incorrectly.
 D. The application runs out of memory.
 		</testo>
-		<risposta>D</risposta>
+		<risposteEsatte>D</risposteEsatte>
 	</domanda>
 	<domanda id="41" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="6" question="43">
 		<testo>
@@ -908,7 +908,7 @@ B. A class does not have to have a constructor explicitly defined.
 C. A constructor may pass arguments to the parent constructor.
 D. A final instance variable whose value is not set when they are declared or in an initialization block should be set by the constructor.
 		</testo>
-		<risposta>A</risposta>
+		<risposteEsatte>A</risposteEsatte>
 	</domanda>
 	<domanda id="54" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="8" question="46">
 		<testo>
@@ -935,7 +935,7 @@ B. Handled.Fixed!
 C. Problem?Handled.Fixed!
 D. The code does not compile.
 		</testo>
-		<risposta>D</risposta>
+		<risposteEsatte>D</risposteEsatte>
 	</domanda>
 	<domanda id="57" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="8" question="41">
 		<testo>
@@ -961,7 +961,7 @@ B. NullPointerException
 C. RuntimeException
 D. The code does not compile.
 		</testo>
-		<risposta>C</risposta>
+		<risposteEsatte>C</risposteEsatte>
 	</domanda>
 	<domanda id="58" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="8" question="40">
 		<testo>
@@ -990,7 +990,7 @@ B. Finished!, followed by a stack trace
 C. The application does not produce any output at runtime.
 D. The code does not compile.
 		</testo>
-		<risposta>D</risposta>
+		<risposteEsatte>D</risposteEsatte>
 	</domanda>
 	<domanda id="52" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="8" question="50">
 		<testo>
@@ -1018,7 +1018,7 @@ B. The code does not compile because of line x1.
 C. The code does not compile because of line x2.
 D. The code does not compile because of line x3.
 		</testo>
-		<risposta>B</risposta>
+		<risposteEsatte>B</risposteEsatte>
 	</domanda>
 	<domanda id="14" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="2" question="42">
 		<testo>
@@ -1038,7 +1038,7 @@ B. cat-name
 C. cat.setName
 D. cat[name]
 		</testo>
-		<risposta>A</risposta>
+		<risposteEsatte>A</risposteEsatte>
 	</domanda>
 	<domanda id="29" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="4" question="43">
 		<testo>
@@ -1052,7 +1052,7 @@ B. 2 2
 C. The code does not compile.
 D. The code compiles but throws an exception at runtime.
 		</testo>
-		<risposta>A</risposta>
+		<risposteEsatte>A</risposteEsatte>
 	</domanda>
 	<domanda id="62" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="9" question="46">
 		<testo>
@@ -1067,7 +1067,7 @@ B. I and II
 C. II and III
 D. I, II, and III
 		</testo>
-		<risposta>D</risposta>
+		<risposteEsatte>D</risposteEsatte>
 	</domanda>
 	<domanda id="63" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="9" question="45">
 		<testo>
@@ -1089,7 +1089,7 @@ B. 12-31-2016
 C. The code does not compile.
 D. The code compiles but throws an exception at runtime.
 		</testo>
-		<risposta>D</risposta>
+		<risposteEsatte>D</risposteEsatte>
 	</domanda>
 	<domanda id="44" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="6" question="40">
 		<testo>
@@ -1107,7 +1107,7 @@ B. this.Drink.water();
 C. this.water();
 D. Drink.water();
 		</testo>
-		<risposta>B</risposta>
+		<risposteEsatte>B</risposteEsatte>
 	</domanda>
 	<domanda id="64" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="9" question="44">
 		<testo>
@@ -1118,7 +1118,7 @@ B. Millisecond
 C. Nanosecond
 D. Picosecond
 		</testo>
-		<risposta>C</risposta>
+		<risposteEsatte>C</risposteEsatte>
 	</domanda>
 	<domanda id="56" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="8" question="43">
 		<testo>
@@ -1143,7 +1143,7 @@ B. The application does not produce any output.
 C. The application compiles but produces a stack trace at runtime.
 D. The code does not compile.
 		</testo>
-		<risposta>D</risposta>
+		<risposteEsatte>D</risposteEsatte>
 	</domanda>
 	<domanda id="66" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="9" question="41">
 		<testo>
@@ -1163,7 +1163,7 @@ B. 2
 C. 3
 D. 4
 		</testo>
-		<risposta>D</risposta>
+		<risposteEsatte>D</risposteEsatte>
 	</domanda>
 	<domanda id="59" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="9" question="49">
 		<testo>
@@ -1183,7 +1183,7 @@ B. black
 C. The code does not compile.
 D. The code compiles but throws an exception at runtime.
 		</testo>
-		<risposta>C</risposta>
+		<risposteEsatte>C</risposteEsatte>
 	</domanda>
 	<domanda id="24" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="4" question="49">
 		<testo>
@@ -1194,7 +1194,7 @@ B. int[][][] nums2a[], nums2b;
 C. int[][] nums3a[][], nums3b[][];
 D. int[] nums4a[][][], numbs4b[][][];
 		</testo>
-		<risposta>B</risposta>
+		<risposteEsatte>B</risposteEsatte>
 	</domanda>
 	<domanda id="69" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="9" question="31">
 		<testo>
@@ -1205,7 +1205,7 @@ B. i -&gt; { i != 0; }
 C. i -&gt; { return i != 0 }
 D. i -&gt; { return i != 0; }
 		</testo>
-		<risposta>D</risposta>
+		<risposteEsatte>D</risposteEsatte>
 	</domanda>
 	<domanda id="60" book="OCA - OCP Practice Tests Exam 1Z0-808 and Exam 1Z0-809" chapter="9" question="50">
 		<testo>
@@ -1220,6 +1220,6 @@ B. 2017
 C. The code does not compile.
 D. The code compiles but throws an exception at runtime.
 		</testo>
-		<risposta>C</risposta>
+		<risposteEsatte>C</risposteEsatte>
 	</domanda>
 </domande>

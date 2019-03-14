@@ -1,3 +1,5 @@
+<%@page import="java.time.format.DateTimeFormatter"%>
+<%@page import="java.time.LocalTime"%>
 <%@page import="it.beije.utils.Utils"%>
 <%@page import="it.beije.bean.Domanda"%>
 <%@page import="java.util.List"%>
@@ -17,12 +19,15 @@ int index = 0;
 if (i != null) {
 	index = Integer.parseInt(i);
 }
+
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+LocalTime time = (LocalTime) session.getValue("time");
+
 //System.out.println("index : " + index);
 int tot = domande.size();
+int secondi = tot * 2 * 60;
 %>
-
-Totale domande caricate : <%= tot %><br>
-<br>
+<div id="timer" style="width: 95%; text-align: right;"><%= time.format(formatter) %></div>
 <%
 if (index < tot) {
 	Domanda d = domande.get(index);
@@ -30,7 +35,9 @@ if (index < tot) {
 	if (risposta == null) risposta = "";
 %>
 
-<%= "Chapter " + d.getChapter() + " domanda " + d.getId() %><br>
+<%--= "Book " + d.getBook() + "Chapter " + d.getChapter() + " domanda " + d.getQuestion() --%><br>
+<br>
+DOMANDA <%= index + 1 %> di <%= tot %><br>
 <br>
 <p>
 <%= Utils.formattaTesto(d.getTesto()) %>
@@ -58,4 +65,18 @@ DOMANDE TERMINATE
 <% if (index != tot) { %><a href="domanda.jsp?index=<%= index + 1 %>">Succ.&gt;&gt;</a><% } %>
 
 </body>
+
+<script>
+var secondi = <%= secondi - 1 %>;
+var timer = setInterval(myTimer, 1000);
+
+function myTimer() {
+  document.getElementById("timer").innerHTML = secondi--;
+  if (secondi < 0) {
+    clearInterval(timer);
+    document.getElementById("timer").innerHTML = 'TEMPO SCADUTO';
+  }
+}
+</script>
+
 </html>

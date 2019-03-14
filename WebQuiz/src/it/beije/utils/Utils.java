@@ -53,12 +53,15 @@ public class Utils {
 	        	domanda = domande.get(i);
 	        	contenutoDomanda = Utils.getChildElements(domanda);
 		        int id = Integer.parseInt(domanda.getAttribute("id"));
+		        String book = domanda.getAttribute("book");
 		        int chapter = Integer.parseInt(domanda.getAttribute("chapter"));
+		        int question = Integer.parseInt(domanda.getAttribute("question"));
 		        String testo = contenutoDomanda.get(0).getTextContent();
+		        //Element risposte = contenutoDomanda.get(1);
 		        String risposta = contenutoDomanda.get(1).getTextContent();
 		        Risposta r = new Risposta();
 		        r.setRispostaEsatta(risposta);
-	        	Domanda d = new Domanda(id, chapter, testo, r);
+	        	Domanda d = new Domanda(id, book, chapter, question, testo, r);
 	        	arrayDomande.add(d);
 	        }	        		
 	        

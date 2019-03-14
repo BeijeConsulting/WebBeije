@@ -1,6 +1,7 @@
 package it.beije.quiz.servlet;
 
 import java.io.IOException;
+import java.time.LocalTime;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -33,12 +34,8 @@ public class StartQuiz extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if (request.getRequestURI().equals(request.getContextPath()+"/StartQuiz")) {
-			List<Domanda> domande = Utils.readFileDomande("C:\\temp\\20180311.xml");
-			
-			request.getSession().putValue("elencoDomande", domande);
-			//request.getSession().putValue("indice", new Integer(0));
-			
-			//response.getWriter().append("Totale domande caricate: ").append(""+domande.size());
+			LocalTime time = LocalTime.now();
+			request.getSession().putValue("time", time);
 			
 			response.sendRedirect("domanda.jsp?index=0");
 		} else {
