@@ -1,5 +1,5 @@
-<%@page import="java.time.format.DateTimeFormatter"%>
-<%@page import="java.time.*"%>
+<%@page import="java.time.Duration"%>
+<%@page import="java.time.LocalTime"%>
 <%@page import="it.beije.utils.Utils"%>
 <%@page import="it.beije.bean.Domanda"%>
 <%@page import="java.util.List"%>
@@ -20,7 +20,6 @@ if (i != null) {
 	index = Integer.parseInt(i);
 }
 
-DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 LocalTime time = (LocalTime) session.getValue("time");
 LocalTime now = LocalTime.now();
 Duration diff = Duration.between(time, now);
@@ -29,9 +28,10 @@ int secondi = tot * 2 * 60;
 long hours = (secondi - diff.getSeconds())/3600;
 long minutes = (secondi - diff.getSeconds())/60 - hours* 60;
 long seconds = (secondi - diff.getSeconds()) - hours * 3600 - minutes * 60;
-
 %>
-<div id ="timer" style="text-align:right"></div>
+
+<div id ="timer" style="width: 98%; text-align:right;"></div>
+
 <script type="text/javascript">
 var ore = <%= hours %>;
 var minuti = <%= minutes %>;
@@ -43,9 +43,6 @@ function formattaTimer(hours,minutes,seconds) {
 	t = t + ":" + ( seconds < 10 ? "0" : "") + seconds;
 	return t;
 }
-
-
-
 
 function myTimer() {
 	document.getElementById("timer").innerHTML = formattaTimer(ore, minuti, secondi--);
@@ -68,10 +65,8 @@ function myTimer() {
 myTimer();
 
 var timer = setInterval(myTimer, 1000);
-//document.getElementById("timer").innerHTML = formattaTimer(ore, minuti, secondi--);
 
 </script>
-
 
 <%
 if (index < tot) {
@@ -80,8 +75,7 @@ if (index < tot) {
 	if (risposta == null) risposta = "";
 %>
 
-<%--= "Book " + d.getBook() + "Chapter " + d.getChapter() + " domanda " + d.getQuestion() --%><br>
-<br>
+<%--= "Book " + d.getBook() + "Chapter " + d.getChapter() + " domanda " + d.getQuestion() --%>
 DOMANDA <%= index + 1 %> di <%= tot %><br>
 <br>
 <p>
@@ -110,9 +104,4 @@ DOMANDE TERMINATE
 <% if (index != tot) { %><a href="domanda.jsp?index=<%= index + 1 %>">Succ.&gt;&gt;</a><% } %>
 
 </body>
-
-<script>
-
-</script>
-
 </html>
