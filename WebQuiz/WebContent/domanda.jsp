@@ -1,3 +1,4 @@
+<%@page import="it.beije.bean.Risposta"%>
 <%@page import="java.time.Duration"%>
 <%@page import="java.time.LocalTime"%>
 <%@page import="it.beije.utils.Utils"%>
@@ -73,19 +74,20 @@ if (index < tot) {
 	Domanda d = domande.get(index);
 	String risposta = d.getRispostaUtente();
 	if (risposta == null) risposta = "";
+	List<Risposta> scelte = d.getRisposte();
 %>
 
-<%--= "Book " + d.getBook() + "Chapter " + d.getChapter() + " domanda " + d.getQuestion() --%>
 DOMANDA <%= index + 1 %> di <%= tot %><br>
 <br>
 <p>
 <%= Utils.formattaTesto(d.getTesto()) %>
 </p>
 <form action = "risposta" method = "POST">
-  Risposta: <input type="text" name="rispostaUtente" value="<%= risposta %>">
   <input type="hidden" name="index" value="<%= index %>">
-  &nbsp;&nbsp;
-  <input type = "submit" value = "Submit" />
+  <% for(Risposta r : scelte) { %><input type = "<%=d.getAnswerType() %>" name="<%=r.getValue() %>" value = "<%=r.getValue() %>"
+  <%if(d.getRispostaUtente() != null)
+	  {if(d.getRispostaUtente().contains(r.getValue())){ %> checked<% }} %> /><%=r.getText() %><br> <% } %>
+  <br><input type="submit" value="Invio">
 </form>
 
 <%

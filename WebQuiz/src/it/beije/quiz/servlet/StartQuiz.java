@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import it.beije.bean.Domanda;
+import it.beije.bean.Risposta;
 import it.beije.utils.Utils;
 
 
@@ -66,11 +67,20 @@ public class StartQuiz extends HttpServlet {
 		List<Domanda> domande = (List) request.getSession().getValue("elencoDomande");
 		
 		if (domande != null) {
-			String rispostaUtente = request.getParameter("rispostaUtente");
 			String index = request.getParameter("index");
+			String rispostaUtente = "";
+			Domanda d = domande.get(Integer.parseInt(index));
+				for(Risposta r : d.getRisposte()) {
+					rispostaUtente += request.getParameter(r.getValue());
+				}
+			
+//			String rispostaUtente = request.getParameter("RispostaUtente");
+			rispostaUtente = rispostaUtente.replace("null", "");
+//			System.out.println(rispostaUtente);
+			
 			int i = 0;
 			if (rispostaUtente != null) {
-				rispostaUtente = rispostaUtente.trim().toUpperCase();
+//				rispostaUtente = rispostaUtente.trim().toUpperCase();
 				if (index != null) {
 					i = Integer.parseInt(index);
 					domande.get(i).setRispostaUtente(rispostaUtente);
