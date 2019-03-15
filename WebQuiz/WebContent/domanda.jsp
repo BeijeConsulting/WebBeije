@@ -1,5 +1,5 @@
 <%@page import="java.time.format.DateTimeFormatter"%>
-<%@page import="java.time.LocalTime"%>
+<%@page import="java.time.*"%>
 <%@page import="it.beije.utils.Utils"%>
 <%@page import="it.beije.bean.Domanda"%>
 <%@page import="java.util.List"%>
@@ -22,12 +22,57 @@ if (i != null) {
 
 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 LocalTime time = (LocalTime) session.getValue("time");
-
-//System.out.println("index : " + index);
+LocalTime now = LocalTime.now();
+Duration diff = Duration.between(time, now);
 int tot = domande.size();
 int secondi = tot * 2 * 60;
+long hours = (secondi - diff.getSeconds())/3600;
+long minutes = (secondi - diff.getSeconds())/60 - hours* 60;
+long seconds = (secondi - diff.getSeconds()) - hours * 3600 - minutes * 60;
+
 %>
-<div id="timer" style="width: 95%; text-align: right;"><%= time.format(formatter) %></div>
+<div id ="timer" style="text-align:right"></div>
+<script type="text/javascript">
+var ore = <%= hours %>;
+var minuti = <%= minutes %>;
+var secondi = <%= seconds %>;
+
+function formattaTimer(hours,minutes,seconds) {
+	var t = "0" + hours;
+	t = t + ":" + ( minutes < 10 ? "0" : "") + minutes;
+	t = t + ":" + ( seconds < 10 ? "0" : "") + seconds;
+	return t;
+}
+
+
+
+
+function myTimer() {
+	document.getElementById("timer").innerHTML = formattaTimer(ore, minuti, secondi--);
+  if (secondi < 0) {
+	  if(minuti > 0) {
+		  secondi = 59;
+		  minuti--;
+	  }else if (ore > 0) {
+		  secondi = 59;
+		  minuti = 59;
+		  ore--;
+	  } else {
+    		clearInterval(timer);
+    		document.getElementById("timer").innerHTML = 'TEMPO SCADUTO';
+	  }
+  }
+  
+}
+
+myTimer();
+
+var timer = setInterval(myTimer, 1000);
+//document.getElementById("timer").innerHTML = formattaTimer(ore, minuti, secondi--);
+
+</script>
+
+
 <%
 if (index < tot) {
 	Domanda d = domande.get(index);
@@ -67,16 +112,7 @@ DOMANDE TERMINATE
 </body>
 
 <script>
-var secondi = <%= secondi - 1 %>;
-var timer = setInterval(myTimer, 1000);
 
-function myTimer() {
-  document.getElementById("timer").innerHTML = secondi--;
-  if (secondi < 0) {
-    clearInterval(timer);
-    document.getElementById("timer").innerHTML = 'TEMPO SCADUTO';
-  }
-}
 </script>
 
 </html>
