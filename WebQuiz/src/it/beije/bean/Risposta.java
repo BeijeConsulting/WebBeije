@@ -2,21 +2,20 @@ package it.beije.bean;
 
 public class Risposta {
 	
-	private String rispostaUtente;
-	private String rispostaEsatta;
+	private String value;
+	private String text;
 	
-	public String getRispostaUtente() {
-		return rispostaUtente;
+	public String getValue() {
+		return value;
 	}
-	public void setRispostaUtente(String rispostaUtente) {
-		this.rispostaUtente = rispostaUtente;
+	public String getText() {
+		return text;
 	}
-
-	public String getRispostaEsatta() {
-		return rispostaEsatta;
+	
+	public void setValue(String value) {
+		this.value = value;
 	}
-	public void setRispostaEsatta(String rispostaEsatta) {
-		this.rispostaEsatta = rispostaEsatta;
+	public void setText(String text) {
+		this.text = text;
 	}
-
 }

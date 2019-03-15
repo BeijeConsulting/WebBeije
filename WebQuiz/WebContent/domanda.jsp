@@ -71,7 +71,7 @@ var timer = setInterval(myTimer, 1000);
 <%
 if (index < tot) {
 	Domanda d = domande.get(index);
-	String risposta = d.getRisposta().getRispostaUtente();
+	String risposta = d.getRispostaUtente();
 	if (risposta == null) risposta = "";
 %>
 

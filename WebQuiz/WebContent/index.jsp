@@ -11,7 +11,7 @@
 <title>Inizia il tuo Quiz OnLine</title>
 </head>
 <%
-List<Domanda> domande = Utils.readFileDomande("C:\\temp\\20180311.xml");
+List<Domanda> domande = Utils.readFileDomande("C:\\temp\\domande.xml");
 session.putValue("elencoDomande", domande);
 
 int tot = domande.size();

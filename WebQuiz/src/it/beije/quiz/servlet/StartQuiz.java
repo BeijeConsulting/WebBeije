@@ -1,7 +1,6 @@
 package it.beije.quiz.servlet;
 
 import java.io.IOException;
-import java.time.Duration;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -44,14 +43,14 @@ public class StartQuiz extends HttpServlet {
 			List<Domanda> domande = (List) request.getSession().getValue("elencoDomande");
 			if (domande != null) {
 				for (Domanda d : domande) {
-					boolean corretta = Utils.controllaRisposta(d.getRisposta().getRispostaEsatta(), d.getRisposta().getRispostaUtente());
+					boolean corretta = Utils.controllaRisposta(d.getRispostaEsatta(), d.getRispostaUtente());
 					
 					response.setContentType("text/html");
-					response.getWriter().append("DOMANDA " + d.getId() + " : la tua risposta : " + d.getRisposta().getRispostaUtente() + "<br><br>");
+					response.getWriter().append("DOMANDA " + d.getId() + " : la tua risposta : " + d.getRispostaUtente() + "<br><br>");
 					if (corretta) {
 						response.getWriter().append("ESATTO!!! :)<br>");
 					} else {
-						response.getWriter().append("La risposta esatta era " +  d.getRisposta().getRispostaEsatta() + " :(<br>");
+						response.getWriter().append("La risposta esatta era " +  d.getRispostaEsatta() + " :(<br>");
 					}
 					
 					response.getWriter().append("<br><br>");
@@ -74,7 +73,7 @@ public class StartQuiz extends HttpServlet {
 				rispostaUtente = rispostaUtente.trim().toUpperCase();
 				if (index != null) {
 					i = Integer.parseInt(index);
-					domande.get(i).getRisposta().setRispostaUtente(rispostaUtente);
+					domande.get(i).setRispostaUtente(rispostaUtente);
 					//request.getSession().putValue("indice", new Integer(++indice));
 				}
 			}
