@@ -34,6 +34,8 @@ public class StartQuiz extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int corrette = 0;
+		float perc = 0;
 		if (request.getRequestURI().equals(request.getContextPath()+"/StartQuiz")) {
 			LocalTime time = LocalTime.now();
 			request.getSession().putValue("time", time);
@@ -49,12 +51,21 @@ public class StartQuiz extends HttpServlet {
 					response.setContentType("text/html");
 					response.getWriter().append("DOMANDA " + d.getId() + " : la tua risposta : " + d.getRispostaUtente() + "<br><br>");
 					if (corretta) {
-						response.getWriter().append("ESATTO!!! :)<br>");
+						response.getWriter().append("ESATTO!!! &#128578<br>");
+						corrette++;
 					} else {
-						response.getWriter().append("La risposta esatta era " +  d.getRispostaEsatta() + " :(<br>");
+						response.getWriter().append("La risposta esatta era " +  d.getRispostaEsatta() + " &#128577<br>");
 					}
 					
 					response.getWriter().append("<br><br>");
+				}
+				perc = corrette  * 100 / domande.size();
+				response.getWriter().append("Numero risposte corrette : " + corrette + "/" + domande.size() + "<br><br>");
+				response.getWriter().append("Percentuale risposte corrette : " + perc + " %" + "<br><br>");
+				if(perc > 65) {
+					response.getWriter().append("<p style=\"color:green; font-size:20px;\"><b>PROMOSSO!!!</b></p>").append("&#128077");
+				} else {
+					response.getWriter().append("<p style=\"color:red; font-size:20px;\"><b>BOCCIATO! Impegnati e studia di più!</b></p>").append(" &#128545");
 				}
 			}
 		}
@@ -69,13 +80,15 @@ public class StartQuiz extends HttpServlet {
 		if (domande != null) {
 			String index = request.getParameter("index");
 			String rispostaUtente = "";
-			Domanda d = domande.get(Integer.parseInt(index));
-				for(Risposta r : d.getRisposte()) {
-					rispostaUtente += request.getParameter(r.getValue());
+			Domanda d = domande.get(Integer.parseInt(index));							//prendo la domanda con l'indice dell'ultima domanda passata
+				for(Risposta r : d.getRisposte()) {										//ciclo sull'array di risposte in sessione
+					if(request.getParameter(r.getValue()) != null) {				
+						rispostaUtente += request.getParameter(r.getValue());			//aggiungo la risposta solo se il get value è diverso da null
+					}
 				}
 			
 //			String rispostaUtente = request.getParameter("RispostaUtente");
-			rispostaUtente = rispostaUtente.replace("null", "");
+//			rispostaUtente = rispostaUtente.replace("null", "");
 //			System.out.println(rispostaUtente);
 			
 			int i = 0;

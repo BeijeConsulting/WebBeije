@@ -84,7 +84,9 @@ DOMANDA <%= index + 1 %> di <%= tot %><br>
 </p>
 <form action = "risposta" method = "POST">
   <input type="hidden" name="index" value="<%= index %>">
+  <%-- ciclo sull'array di risposte e inserisco i valori di input type, name e value legati alla domanda --%>
   <% for(Risposta r : scelte) { %><input type = "<%=d.getAnswerType() %>" name="<%=r.getValue() %>" value = "<%=r.getValue() %>"
+  <%-- se la risposta utente non è null metto checked le risposte contenute in risposta utente --%>
   <%if(d.getRispostaUtente() != null)
 	  {if(d.getRispostaUtente().contains(r.getValue())){ %> checked<% }} %> /><%=r.getText() %><br> <% } %>
   <br><input type="submit" value="Invio">
