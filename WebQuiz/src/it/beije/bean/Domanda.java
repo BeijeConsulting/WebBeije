@@ -14,7 +14,7 @@ public class Domanda {
 	private String testo;
 	private String answerType;
 	private List<Risposta> risposte;
-	private String rispostaUtente;
+	private String rispostaUtente = "";
 	private String rispostaEsatta;
 	
 	public Domanda(int id, String book, int chapter, int question, String testo,

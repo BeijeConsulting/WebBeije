@@ -25,7 +25,7 @@ LocalTime time = (LocalTime) session.getValue("time");
 LocalTime now = LocalTime.now();
 Duration diff = Duration.between(time, now);
 int tot = domande.size();
-int secondi = tot * 2 * 60;
+int secondi = 10;
 long hours = (secondi - diff.getSeconds())/3600;
 long minutes = (secondi - diff.getSeconds())/60 - hours* 60;
 long seconds = (secondi - diff.getSeconds()) - hours * 3600 - minutes * 60;
@@ -57,7 +57,8 @@ function myTimer() {
 		  ore--;
 	  } else {
     		clearInterval(timer);
-    		document.getElementById("timer").innerHTML = 'TEMPO SCADUTO';
+    		//document.getElementById("timer").innerHTML = 'TEMPO SCADUTO';
+    		location.href = "/quiz/risposta";
 	  }
   }
   
