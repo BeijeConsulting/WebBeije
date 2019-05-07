@@ -8,10 +8,19 @@
 CIAO SURABAYA, sono la tua prima JSP<br>
 Sono le ore : <%= new Date() %>
 
-<% 
-	Date d = new Date();
-%>
-<%= d %>
-<% d.compareTo(new Date()); %>
+<br><br>
+<form action="rubrica" method="post">
+  First name:<br>
+  <input type="text" name="firstname">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname">
+  <br>
+  Phone:<br>
+  <input type="text" name="phone">
+  <br><br>
+  <input type="submit" value="INVIO">
+</form>
+
 </body>
 </html>

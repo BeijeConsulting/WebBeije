@@ -51,8 +51,29 @@ public class RubricaServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		String firstname = request.getParameter("firstname");
+		String lastname = request.getParameter("lastname");
+		String phone = request.getParameter("phone");
+		
+		System.out.println("firstname : " + firstname);
+		System.out.println("lastname : " + lastname);
+		System.out.println("phone : " + phone);
+		
+		StringBuilder row = new StringBuilder();
+		row.append(firstname).append(';');
+		row.append(lastname).append(';');
+		row.append(phone).append(';');
+		
+		CSVutils.appendRowsInFile("C:\\temp\\rubrica.txt", row.toString());
+		
+//		response.setContentType("text/html");
+//		response.getWriter()
+//		.append("firstname : " + firstname + "<br>")
+//		.append("lastname : " + lastname + "<br>")
+//		.append("phone : " + phone + "<br>");
+		
+		response.sendRedirect("end.jsp");
 	}
 
 }

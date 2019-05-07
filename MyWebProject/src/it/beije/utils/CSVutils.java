@@ -37,7 +37,7 @@ public class CSVutils {
 		return content;
 	}
 	
-	public static void writeRowsInFile(String pathFile, String... newRows) throws Exception {
+	public static void writeRowsInFile(String pathFile, String... newRows) throws IOException {
 		BufferedWriter writer = new BufferedWriter(new FileWriter(pathFile));
 		for (String r : newRows) {
 			writer.write(r);
@@ -47,7 +47,7 @@ public class CSVutils {
 		writer.close();
 	}
 
-	public static void appendRowsInFile(String pathFile, String... newRows) throws Exception {
+	public static void appendRowsInFile(String pathFile, String... newRows) throws IOException {
 		File file = new File(pathFile);
 		List<String> oldRows = new ArrayList<String>();
 		if (file.exists()) {
