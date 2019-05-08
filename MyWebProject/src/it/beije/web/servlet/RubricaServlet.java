@@ -8,9 +8,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import it.beije.utils.CSVutils;
 import it.beije.utils.DButils;
+import it.beije.web.bean.User;
 
 /**
  * Servlet implementation class RubricaDB
@@ -55,6 +57,16 @@ public class RubricaServlet extends HttpServlet {
 		String firstname = request.getParameter("firstname");
 		String lastname = request.getParameter("lastname");
 		String phone = request.getParameter("phone");
+		
+		User u = new User();
+		u.setFirstName(firstname);
+		u.setLastName(lastname);
+		u.setPhone(phone);
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("utente", u);
+		
+		session.setAttribute("saluto", "ciao");
 		
 		System.out.println("firstname : " + firstname);
 		System.out.println("lastname : " + lastname);

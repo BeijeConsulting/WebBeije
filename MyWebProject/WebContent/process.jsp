@@ -4,21 +4,20 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Fine</title>
+<title>Insert title here</title>
 </head>
 <body>
-<b>HO SALVATO I DATI IN RUBRICA</b>
 
 <jsp:useBean id="utente" class="it.beije.web.bean.User" scope="session"></jsp:useBean>
-<br><br>
+
+<jsp:setProperty property="firstName" name="utente" param="firstname" />  
+<jsp:setProperty property="lastName" name="utente" param="lastname"/>  
+<jsp:setProperty property="phone" name="utente"/>
+  
+Record:<br> 
 <jsp:getProperty property="firstName" name="utente"/><br>  
 <jsp:getProperty property="lastName" name="utente"/><br> 
 <jsp:getProperty property="phone" name="utente"/><br> 
 
-<%
-String s = (String)session.getAttribute("saluto");
-%>
-
-<%= s %>
 </body>
 </html>
