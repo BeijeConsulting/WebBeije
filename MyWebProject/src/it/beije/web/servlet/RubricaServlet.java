@@ -58,26 +58,24 @@ public class RubricaServlet extends HttpServlet {
 		String lastname = request.getParameter("lastname");
 		String phone = request.getParameter("phone");
 		
-		User u = new User();
-		u.setFirstName(firstname);
-		u.setLastName(lastname);
-		u.setPhone(phone);
+//		User u = new User();
+//		u.setFirstName(firstname);
+//		u.setLastName(lastname);
+//		u.setPhone(phone);
 		
-		HttpSession session = request.getSession();
-		session.setAttribute("utente", u);
-		
-		session.setAttribute("saluto", "ciao");
+//		HttpSession session = request.getSession();
+//		session.setAttribute("utente", u);
 		
 		System.out.println("firstname : " + firstname);
 		System.out.println("lastname : " + lastname);
 		System.out.println("phone : " + phone);
 		
-		StringBuilder row = new StringBuilder();
-		row.append(firstname).append(';');
-		row.append(lastname).append(';');
-		row.append(phone).append(';');
-		
-		CSVutils.appendRowsInFile("C:\\temp\\rubrica.txt", row.toString());
+//		StringBuilder row = new StringBuilder();
+//		row.append(firstname).append(';');
+//		row.append(lastname).append(';');
+//		row.append(phone).append(';');
+//		
+//		CSVutils.appendRowsInFile("C:\\temp\\rubrica.txt", row.toString());
 		
 //		response.setContentType("text/html");
 //		response.getWriter()
@@ -86,6 +84,13 @@ public class RubricaServlet extends HttpServlet {
 //		.append("phone : " + phone + "<br>");
 		
 		response.sendRedirect("end.jsp");
+		
+//		response.setContentType("text/plain");
+//		response.getWriter()
+//		.append("firstname : " + firstname + "\n")
+//		.append("lastname : " + lastname + "\n")
+//		.append("phone : " + phone + "\n");
+		
 	}
 
 }

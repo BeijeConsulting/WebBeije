@@ -10,15 +10,11 @@
 <b>HO SALVATO I DATI IN RUBRICA</b>
 
 <jsp:useBean id="utente" class="it.beije.web.bean.User" scope="session"></jsp:useBean>
+
 <br><br>
 <jsp:getProperty property="firstName" name="utente"/><br>  
 <jsp:getProperty property="lastName" name="utente"/><br> 
 <jsp:getProperty property="phone" name="utente"/><br> 
 
-<%
-String s = (String)session.getAttribute("saluto");
-%>
-
-<%= s %>
 </body>
 </html>

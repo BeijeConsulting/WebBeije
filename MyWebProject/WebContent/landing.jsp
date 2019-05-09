@@ -11,13 +11,17 @@
 <%
 String firstname = request.getParameter("firstname");
 String lastname = request.getParameter("lastname");
+String phone = request.getParameter("phone");
+String pippo = request.getParameter("pippo");
 
 System.out.print(firstname);
 
 out.print(firstname);
 %>
-
-<%= lastname %>
+<br>
+<%= lastname %><br>
+<%= phone %><br>
+<%= pippo %><br>
 
 </body>
 </html>

@@ -9,7 +9,7 @@ CIAO SURABAYA, sono la tua prima JSP<br>
 Sono le ore : <%= new Date() %>
 
 <br><br>
-<form action="rubrica" method="post">
+<form action="process.jsp" method="post">
   First name:<br>
   <input type="text" name="firstname">
   <br>
